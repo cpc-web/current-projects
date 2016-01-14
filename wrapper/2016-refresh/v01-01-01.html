@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!-- dec 11 2015 marysitz -->
-<!-- updated with ${description} instead of fixed text -->
-<!-- updated with alt img text on all img -->
-<!-- updated with css files moved out of /test -->
-<!-- updates with modal conflicts on things to see fix -->
+<!-- jan 01 2016 marysitz -->
 <html lang="en">
 
 <head>
@@ -44,10 +40,9 @@ window.optimizely.push(["trackEvent", optimizely_event_name]);
 
 
 <!-- Custom styles for CPC site -->
-
+<link href="http://cpc.convio.net/lightbox/css/lightbox-css-min.css" rel="stylesheet" />
 <link href="http://cpc.convio.net/redesign/css/nav-v4.css" rel="stylesheet">
 <link href="http://cpc.convio.net/2015-refresh/global-test-test.css" rel="stylesheet">
-<link href="http://cpc.convio.net/2015-refresh/persistent-lightbox-test-styles-testing-other-modal.css" rel="stylesheet">
 <link href="http://cpc.convio.net/redesign/css/calendar.css" rel="stylesheet">
 <link href="http://cpc.convio.net/redesign/css/nav-v4-mobile.css" rel="stylesheet">
 <style type="text/css">
@@ -63,6 +58,9 @@ window.optimizely.push(["trackEvent", optimizely_event_name]);
   .secondnav, .secondnav-arrow { visibility: visible; display: none; }
   li.secondTrigger:hover .secondnav, li.secondTrigger:hover .secondnav-arrow {
     display: block;
+  }
+  .secondnav-arrow {
+    margin-top: -5px;
   }
   .toursNav { padding-left: 0; }
   .starBar { width: 100%; }
@@ -157,7 +155,10 @@ window.optimizely.push(["trackEvent", optimizely_event_name]);
     padding-top: 10px;
   } 
 
-
+  .cpc-logo-wrapper {
+    width: 135px;
+    margin: 13px 15px 10px;
+  }
 </style>
 
 <!-- Bootstrap core JavaScript
@@ -165,18 +166,18 @@ window.optimizely.push(["trackEvent", optimizely_event_name]);
 <!-- Place in-page JS at the end of the document so the pages load faster -->
 <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-<script type='text/javascript' src="http://www.centralparknyc.org/assets/js/css3-mediaqueries.js"></script>
-<!--[if lt IE 9]>
-<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type='text/javascript' src="http://cpc.convio.net/lightbox/js/lightbox-email-capture-min.js"></script>
 
+
+
+<!-- script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script -->
+<!-- script type='text/javascript' src="http://www.centralparknyc.org/assets/js/css3-mediaqueries.js"></script--> 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
-  <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script type='text/javasbootscript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <script type='text/javascript' src="http://www.centralparknyc.org/assets/js/respond-min.js"></script>
 
-<script type='text/javascript' src="http://cpc.convio.net/redesign/js/global.js"></script>
+<!-- <script type='text/javascript' src="http://cpc.convio.net/redesign/js/global.js"></script> -->
 
 <!-- scripts -->
 <script type="text/javascript" src="http://cpc.convio.net/js/jquery.validate.min.js"></script>
@@ -227,9 +228,7 @@ $(function() {
 
 </head>
 <body>
-
-<div class="persistent-lightbox-test-control">
-  <div class="modal fade" id="captureModal">
+  <div class="modal fade" id="captureModal"><!-- start modal -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -238,29 +237,36 @@ $(function() {
               <span aria-hidden="true">&times;</span>
             </button>
             <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">
-              <img src="http://www.centralparknyc.org/assets/images/2014/2014_recruit_modal_grey_close_v3.png" alt="Close Button" />
+              <img src="http://www.centralparknyc.org/assets/images/2014/2014_recruit_modal_grey_close_v3.png" />
             </button>
           </div>  
           <div class="row">
-            <div class="modal-title">Support Central Park today and your gift will be MATCHED!</div>
+            <div class="modal-title">Get the Inside Scoop on Central Park!</div>
           </div>       
         </div>
-        <div class="row modal-footer">
-          <div class="col-sm-9 modal-sub-title">
-            Make your tax-deductible gift by Dec. 31, and your donation will double thanks to a group of generous donors — up to $350,000!
+        <div class="modal-footer">
+          <div class="modal-sub-title">
+            Be the first to know what's going on in the Park, unearth Park secrets, get special offers, and more. 
           </div>
-          <div class="col-sm-3 sign-up-row">
-          
-              <a href="https://secure2.convio.net/cpc/site/SPageNavigator/donate_eoycampaign_2015MR.html?s_src=201512_eoyfundraising&s_subsrc=lightbox_control" class="hidden-xs"><button class="btnSignUpLightboxDonate clickable">
-                  DONATE NOW
-                </button>
-              </a>
-
-              <a href="https://secure2.convio.net/cpc/site/SPageNavigator/donate_eoycampaign_2015MR.html?s_src=201512_eoyfundraising&s_subsrc=lightbox_mobile" class="hidden-lg hidden-md hidden-sm"><button class="btnSignUpLightboxDonate clickable">
-                  DONATE NOW
-                </button> 
-              </a> 
-            
+          <div class="row sign-up-row">
+            <form novalidate="novalidate" id="lbox_register_form" name="lbox_register_form" method="post" action="javascript:void(0);">
+              <input id="cons_email" name="cons_email" placeholder="Your Email" type="text">
+              <input id="cons_zip_code" name="cons_zip_code" placeholder="Your ZIP Code" type="text">
+              <input value="true" name="cons_email_opt_in" type="hidden">
+              <input name="cons_info_component" value="true" type="hidden">
+              <input name="cons_mail_opt_in" value="true" type="hidden">
+              <input name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" type="hidden">
+              <input name="NEXTURL" value="http://www.centralparknyc.org/cpc-registration.html?show=all" type="hidden">
+              <input name="s_src" value="website" type="hidden">
+              <input name="s_subsrc" value="insider_lightbox_2015" type="hidden">
+              <input name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." type="hidden">
+              <input name="SURVEY_ID" value="4520" type="hidden">
+              <input name="ERRORURL" id="ERRORURL" value="http://www.centralparknyc.org/cpc-registration.html" type="hidden">
+              <input name="ifUsername" id="ifUsername" value="[[S1:user_name]]" type="hidden">
+              <button class="btnSignUpLightbox clickable" id="formSubmit">
+                SIGN UP NOW
+              </button>  
+            </form>
             <div class="bottom-link hidden-sm hidden-md hidden-lg">
               <div class="close bottom-link" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">Continue to CentralParkNYC.org</span>
@@ -271,14 +277,12 @@ $(function() {
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-</div>
 
 
-<!-- ============================== end lightbox ============================== -->
+
 
   <!--- /////////// EVERYTHING ABOVE THIS POINT GOES IN WRAPPER ////////////// -->
-    <!-- NAVBAR ================================================== -->
-
+  <!-- NAVBAR ================================================== -->
   <div role="navigation" class="navbar navbar-cpc navbar-static-top">
     <div class="container">
       <div class="navbar-header">
@@ -289,7 +293,7 @@ $(function() {
           <span class="icon-bar"></span>
         </button>
         <span class="menu-for-mobile-test">MENU</span>
-        <a href="http://www.centralparknyc.org/" class="navbar-brand2"><img src="http://cpc.convio.net/redesign/img/cpc/35logo-74h.jpg" alt="Central Park Conservancy Logo"></a>
+        <a href="http://www.centralparknyc.org/" class="navbar-brand2"><img class="cpc-logo-wrapper" src="http://cpc.convio.net/redesign/img/cpc/central-park-conservancy-logo.jpg" alt="Central Park Conservancy Logo"></a>
         <div class="navbar-right">
           <div class="navbar-text navbar-left navbar-cpc-top navbar-social hidden-xs">
             <a target="_blank" href="https://www.facebook.com/centralparknyc" onclick="ga('send', 'event', 'SocialMedia', 'HoverClick', 'Facebook');" ><i class="fa fa-facebook socialIcon"></i></a>
@@ -388,16 +392,6 @@ $(function() {
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
 <div class="templateComponent" id="body"></div>
 
 
@@ -444,6 +438,7 @@ $(function() {
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/maps">Maps</a></li>
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/tours/">Tours</a></li>
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+                <li class="footer-sub-item"><a href="http://www.centralparknyc.org/alerts">Alerts and Closures</a></li>
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/history.html">History</a></li>
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/faq.html">FAQ</a></li>
                 <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
@@ -525,32 +520,6 @@ $(function() {
       </a>
     </div> <!-- end star bar -->
 
-
-<!-- modal script -->
-<script type="text/javascript">
-  (function($){
-    $(function() {
-      // REGISTER MODAL SCRIPTS
-      var cookieValue = readCookie('2015cpcEOYPersistentLBControl');
-      var submittedFlag = false;
-      if (cookieValue == 'success' || cookieValue == 'close' || window.optSuppressLightbox) {
-        console.log('cookie: ', cookieValue); // cookie exists
-      } else {
-          $('#captureModal').modal('show').on('hidden.bs.modal', function () {
-            if (!submittedFlag) {
-              setCookie("2015cpcEOYPersistentLBControl", "close", 1);
-            } else {
-            }
-          });
-        }
-      var urlFull = document.location.href;
-      $('.closeModal').click(function() {
-        $('#captureModal').modal('hide')
-      });
-    });
-  })(jQuery);
-</script>
-
 <script type="text/javascript">
 
 var urlFull = document.location.href;
@@ -617,6 +586,7 @@ function submitEmail(thisDivID) {
       if (e.which == 13) {
         submitEmail('emailFooter');
         return false;
+        
       }
     });
     
@@ -635,160 +605,6 @@ function submitEmail(thisDivID) {
     });
   });
 })(jQuery);
-
-// cookie code for persistent lightbox 
-//currently showing daily 
-
-(function($){
-  function activeClasses() {
-    $("#per-menu").addClass("toggle-menu-persistent");
-  }
-  setTimeout(activeClasses, 500);
-
-  function overlayNoClick () {
-    var myOverlay = $('#per-menu').hasClass('persistent-lightbox-overlay');
-    console.log(myOverlay + "my overlay");
-    if (myOverlay) {
-      $('#contentDiv a').click(function (e){
-        e.preventDefault();
-      });
-      $('.navbar').click(function (e){
-        e.preventDefault();
-      });
-    }
-    else {
-      $('#contentDiv a').unbind('click');
-      $('.navbar').unbind('click');
-    }
-  }
-
-  $(function() {
-    var cookieValue = readCookie('2015cpcEOYPersistentLB');
-    if (cookieValue == "cpc-eoy" || !window.optSuppressLightbox) {
-      console.log('cookie exists for persistent lightbox');
-    }
-    else {
-      $("#per-menu").addClass("active persistent-lightbox-overlay ");
-      ga('send', 'event', 'Persistent-Lightbox', 'display', 'EOY2015', {nonInteraction: true});
-      $( window ).on( 'scroll.optimizely click.optimizely', function() {
-        setCookie("2015cpcEOYPersistentLB", "cpc-eoy", 1);
-        $( window ).off( '.optimizely' );
-      });
-      overlayNoClick();
-    }
-  });
-
-  $(".menu-sidebar").click(function(){
-    $("#per-menu").toggleClass("active persistent-lightbox-overlay ");
-    overlayNoClick();
-  });
-
-  $('.container').click(function (){
-    $("#per-menu").removeClass("active persistent-lightbox-overlay ");
-    overlayNoClick();
-  });
-  
-  $('.fa-times').click(function () {
-    $("#per-menu").removeClass("active persistent-lightbox-overlay ");
-    overlayNoClick();
-  })
-
-
-  console.log('unbinding click. using .container');
-
-
-
-})(jQuery);
-
-//only accept numbers in OTHER AMOUNT input 
-function numbersOnly(e,decimal){
-  var key;
-  var keychar;
-  if(window.event)
-     key=window.event.keyCode;
-  else if(e)
-     key=e.which;
-  else
-     return true;
-  keychar=String.fromCharCode(key);
-  if((key==null)||(key==0)||(key==8)||(key==9)||(key==13)||(key==27))
-     return true;
-  else if((("0123456789").indexOf(keychar)>-1))
-     return true;
-  else if(decimal&&(keychar==".")) 
-    return true;
-  else
-     return false;
-}
-
-//assign value to DONATE CTA BUTTON
-(function($){
-   $(function() {
-
-    var donationLevel;
-
-    var otherAmount;
-    
-    function donationLevelPick () {
-      var ctaLink = $(".donateCta").attr("href") + donationLevel + "#persistent_link";
-      if ($('#monthly_gift').is(':checked')) { 
-        ctaLink = $(".donateCta").attr("href") + donationLevel + "&monthly_gift=yes" + "#persistent_link";
-      }
-      $(".donateCta").attr("href", ctaLink);
-        console.log(ctaLink);
-    }
-
-    function otherAmountURL () { 
-      otherAmount = $(".donateCta").attr("href") + "&other_amount=-" + $('#other_amount').val() + "-" + "#persistent_link";
-      if ($('#monthly_gift').is(':checked')) {
-        otherAmount = $(".donateCta").attr("href") + "&other_amount=-" + $('#other_amount').val() + "-" + "&monthly_gift=yes" + "#persistent_link";
-      }
-      $(".donateCta").attr("href", otherAmount);
-    }
-
-
-    $(".btn-plb").click(function () {
-      // get number at end of id and assign to new variable
-      $(".btn-plb").css("background-color", "#fff");
-      $(this).css("background-color", "#68b247");
-      otherAmount = null;
-      $('#other_amount').val("");
-      var buttonId = $(this).attr("id").charAt(5);
-      function donateAmount () {
-        // create var with number at end 
-        donationLevel = "&levelID=" + buttonId;
-          console.log(donationLevel); 
-      }
-      donateAmount();
-    }); 
-
-
-    $('#other_amount').keyup(function() {
-      $(".btn-plb").css("background-color", "#fff");
-      donationLevel = null;
-      otherAmount = $(this).val();
-    });
-
-
-    $(".btn-cta").click(function () {     
-      $('.lightbox-container').css("visibility", "hidden");
-      $('.lightbox-spinner').css("visibility", "visible");
-      
-      if (donationLevel){
-        donationLevelPick(); 
-      }
-      if (otherAmount) {
-        otherAmountURL();
-      }
-
-      ga('send', 'event', 'Persistent-Lightbox', 'donate-click', 'EOY2015', {nonInteraction: true});
-    });
-  });   
-})(jQuery);    
-
 </script>
-<!-- END email capture box -->  
-
 </body>
-
 </html>
