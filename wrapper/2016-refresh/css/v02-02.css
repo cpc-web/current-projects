@@ -1,0 +1,54 @@
+.brandbar {
+  height: 80px;
+  margin-top: 5px; }
+  .brandbar ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0; }
+  .brandbar li {
+    display: table-row;
+    float: left; }
+  .brandbar .cpc-logo-wrapper-img {
+    width: 150px;
+    margin: 12px 0 10px; }
+  .brandbar .trust-language {
+    font-size: 24px;
+    color: #3BAB36;
+    margin-left: 40px;
+    line-height: 3; }
+  .brandbar .email-follow-top {
+    float: right;
+    margin-top: 5px; }
+    .brandbar .email-follow-top input {
+      height: 40px;
+      padding: 10px;
+      outline: none;
+      border: 1px solid #C5C5C5;
+      color: #C5C5C5;
+      width: 200px;
+      margin-top: 3px; }
+    .brandbar .email-follow-top .submitButton {
+      color: #ffffff;
+      font-size: 16px;
+      padding: 8px 20px 8px 20px;
+      border: solid #79bf43 0px;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 2px;
+      font-family: 'Titling Gothic FB Cond', sans-serif;
+      height: 40px;
+      border-radius: 2px;
+      background-color: #68b247;
+      background-image: -webkit-linear-gradient(#68b247, #689506);
+      background-image: linear-gradient(#68b247, #689506);
+      margin-left: -5px; }
+
+.navbar {
+  background-color: #636466;
+  border-radius: 2px; }
+  @media screen and (max-width: 991px) {
+    .navbar {
+      background-color: white; } }
+
+/*# sourceMappingURL=v02-02.css.map */

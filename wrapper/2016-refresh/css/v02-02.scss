@@ -1,0 +1,95 @@
+@import "bourbon/bourbon";
+$cpc-green: #68b247;
+$light-green: #689506;
+$dark-green: #5BA93E;
+$social-green: #86C26B;
+$very-light-green: #DFECCD;
+$trust-green: #3BAB36;
+
+$dark-gray: #636466;
+$medium-gray: #A3A4A2;
+$light-gray: #C5C5C5;
+$very-light-gray: #DEDEDE;
+$transparent-gray: rgba(0, 0, 0, 0.6);
+
+$red: #E20034;
+
+$orange: #FFA500;
+
+$titling-narr: 'Titling Gothic FB Narr', sans-serif;
+$titling-cond: 'Titling Gothic FB Cond', sans-serif;
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+@mixin input {
+  height: 40px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #C5C5C5;
+  color: $light-gray;
+}
+
+@mixin button {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 8px 20px 8px 20px;
+  border: solid #79bf43 0px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Titling Gothic FB Cond', sans-serif;
+  height: 40px;
+  border-radius: 2px;
+  @include linear-gradient($cpc-green, $light-green);
+}
+
+.brandbar {
+  height: 80px;
+  margin-top: 5px;
+  ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  li {
+    display: table-row;
+    float: left;
+  }
+	.cpc-logo-wrapper-img {
+    width: 150px;
+    margin: 12px 0 10px;
+  }
+  .trust-language {
+    font-size: 24px;
+    color: $trust-green;
+    margin-left: 40px;
+    line-height: 3;
+  }
+  .email-follow-top {
+    float: right;
+    margin-top: 5px;
+    input {
+      @include input;
+      width: 200px;
+      margin-top: 3px;
+    }
+    .submitButton {
+      @include button;
+      margin-left: -5px;
+    }
+  }
+}
+
+.navbar {
+  background-color: $dark-gray;
+  border-radius: 2px;
+  @media screen and (max-width: $screen-sm-max) {
+    background-color: white;
+  }
+}
