@@ -26,6 +26,8 @@ $screen-sm-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-md-max: ($screen-lg-min - 1);
 
+
+
 @mixin input {
   height: 40px;
   padding: 10px;
@@ -37,16 +39,18 @@ $screen-md-max: ($screen-lg-min - 1);
 @mixin button {
   color: #ffffff;
   font-size: 16px;
-  padding: 8px 20px 8px 20px;
   border: solid #79bf43 0px;
   text-decoration: none;
   text-align: center;
   letter-spacing: 2px;
   font-family: 'Titling Gothic FB Cond', sans-serif;
-  height: 40px;
   border-radius: 2px;
   @include linear-gradient($cpc-green, $light-green);
-}
+  height: 40px;
+  width: 100px;
+  vertical-align: middle;
+  margin-top: -4px;
+  }
 
 .brandbar {
   height: 80px;
@@ -82,6 +86,14 @@ $screen-md-max: ($screen-lg-min - 1);
     .submitButton {
       @include button;
       margin-left: -5px;
+      @-moz-document url-prefix() {
+        margin-top: -3px;
+      }
+      @media screen and (max-width: $screen-md-max) and (min-width: $screen-md-min){
+        @-moz-document url-prefix() {
+          margin-top: -3px;
+        }
+      }
     }
   }
 }
@@ -93,3 +105,6 @@ $screen-md-max: ($screen-lg-min - 1);
     background-color: white;
   }
 }
+
+
+
