@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!-- jan 01 2016 marysitz -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="${description}">
+  <meta name="author" content="Central Park Conservancy">  
+
+  <!-- UNCOMMENT WHEN GOES LIVE -->
+  <title><t:value id="title">title</t:value> - The Official Website of Central Park NYC</title>
+<!--   <t:value id="meta.keywords">meta.keywords</t:value>
+  <t:value id="meta.description">meta.description</t:value> -->
+  <!-- UNCOMMENT WHEN GOES LIVE -->
+
+  <!-- Open Graph data -->
+  <meta property='og:title' content='${title}' />
+  <meta property='og:type' content='webpage' />
+  <meta property='og:url' content='${url}' />
+  <meta property='og:image' content='${large.url}' />
+  <meta property='og:description' content='${description}' /> 
+
+  <!-- Optimizely code -->
+  <script src="//cdn.optimizely.com/js/2131741199.js"></script>
+  <script type="text/javascript">
+    function submitOptimizelyEvent(optimizely_event_name) {
+      window['optimizely'] = window['optimizely'] || []; 
+      window.optimizely.push(["trackEvent", optimizely_event_name]);
+    }
+  </script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="http://cloud.webtype.com/css/2ebe6d20-6380-420e-a3c8-7a19f4a641e2.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="http://www.centralparknyc.org/assets/css/bootstrap-303-min.css" rel="stylesheet" />
+
+  <!-- Custom styles for CPC site -->
+ <!--  <link href="css/v06-push-oc.css" rel="stylesheet" /> -->
+  <link href="http://cpc.convio.net/lightbox/css/lightbox-css-min.css" rel="stylesheet" />
+  <link href="http://cpc.convio.net/2015-refresh/global-test-test.css" rel="stylesheet">
+  <link href="http://cpc.convio.net/redesign/css/calendar.css" rel="stylesheet">
+
+  <!-- Bootstrap core JavaScript -->
+  <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <!-- script type='text/javascript' src="http://cpc.convio.net/wrapper-test/all-cpc-js.js"></script -->
+  <!-- uncomment when done with test! -->
+  
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <script type='text/javasbootscript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script type='text/javascript' src="http://www.centralparknyc.org/assets/js/respond-min.js"></script>
+
+  <!-- all-cpc scripts -->
+  <script type="text/javascript" src="http://cpc.convio.net/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="http://cpc.convio.net/js/luminateExtend.js"></script>
+  <script type="text/javascript" src="http://cpc.convio.net/js/cookieCode.js"></script>
+  <script type="text/javascript">jQuery.noConflict();</script>
+  <script type="text/javascript">
+  //start with luminateExtend init call
+  (function($){
+    $(function() {
+      luminateExtend({
+      apiKey: 'cpcapis',
+      response_format: 'xml',
+      path: {
+        nonsecure: 'http://support.centralparknyc.org/site/', 
+        secure: 'https://secure2.convio.net/cpc/site/'
+      }
+      });
+    });
+  })(jQuery);
+  </script>
+  <!-- GA New Universal tracking Code -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-17339074-1', 'auto', {'allowLinker': true});
+    if (CONVIO.referrer.length > 0) { ga('set', 'referrer', CONVIO.referrer); } 
+    ga('require', 'displayfeatures');
+    ga('require', 'linkid', 'linkid.js');
+
+    ga('require', 'linker');
+    ga('linker:autoLink', ['secure2.convio.net', 'centralparknyc.tumblr.com']);
+
+    // Optimizely Universal Analytics Integration
+    window.optimizely = window.optimizely || [];
+    window.optimizely.push("activateUniversalAnalytics");
+
+    ga('send', 'pageview');
+  </script>
+  <style>
+.container {
+  padding: 0; }
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    min-width: 750px;
+    width: 100%; } }
+.brandbar {
+  height: 80px;
+  margin-top: 5px; }
+  .brandbar li {
+    display: table-row;
+    float: left; }
+  .brandbar ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0; }
+  .brandbar .cpc-logo-wrapper-img {
+    width: 150px;
+    margin: 12px 0 10px; }
+  .brandbar .trust-language {
+    font-size: 24px;
+    color: #3BAB36;
+    margin-left: 40px;
+    line-height: 3; }
+  .brandbar .email-follow-top {
+    float: right;
+    margin-top: 5px; }
+    .brandbar .email-follow-top input {
+      height: 40px;
+      padding: 10px;
+      outline: none;
+      border: 1px solid #C5C5C5;
+      color: #C5C5C5;
+      width: 200px;
+      margin-top: 3px; }
+    .brandbar .email-follow-top .submitButton {
+      color: #ffffff;
+      font-size: 16px;
+      border: solid #79bf43 0px;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: 2px;
+      font-family: 'Titling Gothic FB Cond', sans-serif;
+      border-radius: 2px;
+      background-color: #77BA59;
+      background-image: -webkit-linear-gradient(#77BA59, #548E39);
+      background-image: linear-gradient(#77BA59, #548E39);
+      height: 40px;
+      width: 100px;
+      vertical-align: middle;
+      margin-top: -4px;
+      margin-left: -5px; }
+      .brandbar .email-follow-top .submitButton:hover {
+        background-color: #68b247;
+        background-image: -webkit-linear-gradient(#68b247, #406A2B);
+        background-image: linear-gradient(#68b247, #406A2B); }
+      .brandbar .email-follow-top .submitButton:focus {
+        background-color: #4A7C32;
+        background-image: -webkit-linear-gradient(#4A7C32, #406A2B);
+        background-image: linear-gradient(#4A7C32, #406A2B); }
+@-moz-document url-prefix() {
+  .brandbar .email-follow-top .submitButton {
+    margin-top: -3px; } }
+      @media screen and (max-width: 1199px) and (min-width: 992px) {
+        @-moz-document url-prefix() {
+          .brandbar .email-follow-top .submitButton {
+            margin-top: -3px; } } }
+
+@media screen and (max-width: 991px) {
+  .navbar-mobile {
+    background-color: white; } }
+.navbar-mobile li {
+  display: table-row;
+  float: left;
+  width: 15%; }
+.navbar-mobile ul {
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  margin-bottom: 0; }
+.navbar-mobile .icon-li {
+  width: 25%;
+  text-align: center; }
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .navbar-mobile .icon-li {
+    width: 10%; } }
+.navbar-mobile .icon-text {
+  font-size: 12px; }
+.navbar-mobile .logo-img-li {
+  width: 110px;
+  margin: 0 auto; }
+.navbar-mobile .logo-li {
+  width: 50%;
+  margin-top: 5px;
+  text-align: center; }
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .navbar-mobile .logo-li {
+    width: 80%; } }
+.navbar-mobile .fa-search {
+  font-size: 30px;
+  color: #636466;
+  margin-bottom: 4px; }
+.navbar-mobile .fa-bars {
+  font-size: 30px;
+  color: #636466; }
+
+.navbar-mobile {
+  border-bottom: 2px solid #68b247;
+  margin-top: 10px;
+  height: 60px; }
+
+.navbar-toggle {
+  position: relative;
+  float: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  text-align: center;
+  margin: 0 auto; }
+
+.navbar-nav {
+  border-radius: 2px;
+  min-height: 40px;
+  background-color: #737475;
+  background-image: -webkit-linear-gradient(#737475, #636466);
+  background-image: linear-gradient(#737475, #636466); }
+
+.fa-search.desktop-menu {
+  color: white;
+  font-size: 25px;
+  font-size: 25px;
+  margin-top: 10px; }
+
+.navbar-nav {
+  width: 100%;
+  padding: 0 2% 0 0; }
+  .navbar-nav .visit {
+    width: 10%; }
+  .navbar-nav .about {
+    width: 20%; }
+  .navbar-nav .shop {
+    width: 10%; }
+  .navbar-nav .support {
+    width: 10%; }
+  .navbar-nav .donate-hp {
+    width: 35%;
+    text-align: center;
+    /*  background-color: $red;*/
+    font-weight: bold;
+    background-color: #E20034;
+    background-image: -webkit-linear-gradient(#E20034, #B4002A);
+    background-image: linear-gradient(#E20034, #B4002A); }
+  .navbar-nav .donate-hp a:hover {
+    color: white;
+    background-color: #E20034;
+    background-image: -webkit-linear-gradient(#E20034, #860020);
+    background-image: linear-gradient(#E20034, #860020); }
+  .navbar-nav .search-hp {
+    width: 15%;
+    text-align: center; }
+  .navbar-nav li a {
+    color: white;
+    font-size: 18px;
+    font-family: 'Titling Gothic FB Cond';
+    letter-spacing: .6px; }
+  .navbar-nav li a:hover {
+    background-color: transparent;
+    color: #939493;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    -ms-transition: 0.2s;
+    transition: 0.2s ease-out; }
+  .navbar-nav li a:focus {
+    background-color: transparent;
+    color: #939493; }
+
+.navbar-nav > li > .dropdown-menu {
+  min-width: 225px;
+  padding: 10px 0;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-top: -1px; }
+  .navbar-nav > li > .dropdown-menu li a {
+    color: #636466; }
+  .navbar-nav > li > .dropdown-menu li a:hover {
+    text-decoration: underline; }
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent; }
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .navbar-nav li a {
+    font-size: 16px; } }
+/* show mobile nav on small screens for tablet */
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none; }
+
+  .navbar-toggle {
+    display: block; }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+  .navbar-collapse.collapse {
+    display: none !important; }
+
+  .navbar-nav {
+    float: none !important;
+    margin: 0; }
+
+  .navbar-nav > li {
+    float: none; }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0; }
+
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block !important; }
+
+  .collapsing {
+    overflow: hidden !important; } }
+@media (min-width: 979px) {
+  ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block; } }
+#offcanvas-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%; }
+
+#site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: .3s ease-out all;
+  transition: .3s ease-out all; }
+
+#offcanvas-menu {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -70%;
+  background: #428bca;
+  padding: 15px; }
+
+#offcanvas-wrapper.show-nav #site-canvas {
+  -webkit-transform: translateX(-70%);
+  transform: translateX(-70%); }
+
+.mobile-menu {
+  /*  position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    right: -80%;
+    height: 100%;
+    z-index: 10;
+    background-color: $dark-gray;
+           -webkit-transition: 0.5s ease;
+          -moz-transition: 0.5s ease;
+          -o-transition: 0.5s ease;
+          transition: 0.5s ease;*/ }
+
+.mobile-menu.active {
+  /*  right: 0%;
+         -webkit-transition: 0.3s ease-out;
+          -moz-transition: 0.3s ease-out;
+          -o-transition: 0.3s ease-out;
+          transition: 0.3s ease-out;*/ }
+
+.active-body {
+  /*    width:100%;
+     height:100%;
+    position: relative;
+    right: 80%;*/ }
+
+/*# sourceMappingURL=v06-push-oc.css.map */
+
+
+
+  </style>
+</head>
+<body>
+  <div id="offcanvas-wrapper">
+    <div id="site-canvas">
+      <!--////////////////////////////// MOBILE SLIDER /////////////////////////////////////// -->
+      <div class="mobile-menu" id="offcanvas-menu">
+        <ul class="nav navbar-nav ">
+          <li class="dropdown visit">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visit</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.centralparknyc.org/about/">Park Information</a></li>
+              <li><a href="http://www.centralparknyc.org/things-to-see-and-do/">Things to See and Do</a></li>
+              <li><a href="http://www.centralparknyc.org/events/">Calendar of Events</a></li>                       
+              <li><a href="http://www.centralparknyc.org/maps/">Maps</a></li>
+              <li><a href="http://www.centralparknyc.org/tours/">Tours</a></li>
+              <li><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+              <li><a href="http://www.centralparknyc.org/alerts/">Alerts and Closures</a></li>
+              <li><a href="http://www.centralparknyc.org/about/history.html">History</a></li>
+              <li><a href="http://www.centralparknyc.org/about/faq.html">FAQ</a></li>
+              <li><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
+            </ul>
+          </li>
+          <li class="dropdown about">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About the Conservancy</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/">About the Conservancy</a></li>
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/">Mission and History</a></li>
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/management-and-governance.html">Management and Governance</a></li>
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/institute-for-urban-parks.html">Institute for Urban Parks</a></li>
+              <li><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/womens-committee/">Womens Committee</a></li>
+              <li><a href="http://centralparknyc.tumblr.com">Central Park Conservancy Blog</a></li>
+              <li><a href="http://www.centralparknyc.org/about/about-cpc/job-opportunities.html">Jobs</a></li>
+            </ul>
+          </li>
+          <li class="shop">
+            <a href="http://www.centralparknyc.org/shop/">Shop</a>
+          </li>
+          <li class="dropdown support">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support</a>
+            <ul class="dropdown-menu">
+              <li><a href="http://www.centralparknyc.org/support/">Support</a></li>
+              <li><a href="http://www.centralparknyc.org/support/benefit-events/">Benefit Events</a></li>
+              <li><a href="http://www.centralparknyc.org/support/index.html#claim">Claim a Piece of the Park</a></li>
+              <li><a href="http://www.centralparknyc.org/support/corporate-giving/">Corporate Giving</a></li>
+              <li><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=donate&amp;s_src=website&amp;s_subsrc=RD_donate_mainnav">Donate</a></li>
+              <li><a href="http://support.centralparknyc.org/site/Donation2?df_id=3320&3320.donation=form1&s_src=website&s_subsrc=RD_honmem_mainnav">Honor/Memorial</a></li>
+              <li><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&s_src=website&s_subsrc=RD_join_renew_mainnav">Join/Renew</a></li>
+              <li><a href="http://www.centralparknyc.org/support/volunteer/">Volunteer</a></li>  
+            </ul>
+          </li>  
+          <li class="donate-hp">
+            <a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join/Renew</a>
+          </li>    
+          <li class="search-hp"><i class="fa fa-search desktop-menu" id="submit"></i></li>
+        </ul>
+      </div>
+  
+
+      <div class="modal fade" id="captureModal"><!-- start modal -->
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="row">
+                <button type="button" class="close hidden-sm hidden-md hidden-lg" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">
+                  <img src="http://www.centralparknyc.org/assets/images/2014/2014_recruit_modal_grey_close_v3.png" />
+                </button>
+              </div>  
+              <div class="row">
+                <div class="modal-title">Get the Inside Scoop on Central Park!</div>
+              </div>       
+            </div>
+            <div class="modal-footer">
+              <div class="modal-sub-title">
+                Be the first to know what's going on in the Park, unearth Park secrets, get special offers, and more. 
+              </div>
+              <div class="row sign-up-row">
+                <form novalidate="novalidate" id="lbox_register_form" name="lbox_register_form" method="post" action="javascript:void(0);">
+                  <input id="cons_email" name="cons_email" placeholder="Your Email" type="text">
+                  <input id="cons_zip_code" name="cons_zip_code" placeholder="Your ZIP Code" type="text">
+                  <input value="true" name="cons_email_opt_in" type="hidden">
+                  <input name="cons_info_component" value="true" type="hidden">
+                  <input name="cons_mail_opt_in" value="true" type="hidden">
+                  <input name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" type="hidden">
+                  <input name="NEXTURL" value="http://www.centralparknyc.org/cpc-registration.html?show=all" type="hidden">
+                  <input name="s_src" value="website" type="hidden">
+                  <input name="s_subsrc" value="insider_lightbox_2015" type="hidden">
+                  <input name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." type="hidden">
+                  <input name="SURVEY_ID" value="4520" type="hidden">
+                  <input name="ERRORURL" id="ERRORURL" value="http://www.centralparknyc.org/cpc-registration.html" type="hidden">
+                  <input name="ifUsername" id="ifUsername" value="[[S1:user_name]]" type="hidden">
+                  <button class="btnSignUpLightbox clickable" id="formSubmit">
+                    SIGN UP NOW
+                  </button>  
+                </form>
+                <div class="bottom-link hidden-sm hidden-md hidden-lg">
+                  <div class="close bottom-link" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">Continue to CentralParkNYC.org</span>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+
+      <!--////////////////////////////// BRANDBAR BEGINS ///////////////////////////////////////// -->
+      <div class="brandbar hidden-sm hidden-xs">
+        <div class="container">
+          <ul>
+            <li>  
+              <a href="http://www.centralparknyc.org/">
+                <img class="cpc-logo-wrapper-img" src="http://cpc.convio.net/redesign/img/cpc/central-park-conservancy-logo.jpg" alt="Central Park Conservancy Logo">
+              </a>
+            </li>
+            <li class="trust-language">
+              Official Caretakers of Central Park
+            </li>  
+            <li class="email-follow-top">
+              <div id="emailFollowUs">
+                <form action="http://support.centralparknyc.org/site/Survey" method="post" name="register" class="emailFollowUs">
+                  <input type="hidden" name="cons_info_component" value="t" />
+                  <input type="hidden" name="cons_mail_opt_in" value="t" />
+                  <input type="hidden" name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" />
+
+                  <span class="email-capture-copy">Get the Inside Scoop on Central Park Events!</span> <br/>
+                  <input class="primaryEmail emailShareInput" maxlength="40" name="cons_email" onblur="if(this.value == '') this.value='Your Email'" onfocus="if(this.value == 'Your Email') this.value = '';" size="13" type="text" value="Your Email" >
+                    <button class="clickable submitButton">Sign Up</button>
+                  </input>  
+                  <input type="hidden" name="s_src" value="website" />
+                  <input type="hidden" name="s_subsrc" value="2014_followBox" />
+                  <input type="hidden" name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." />
+                  <input type="hidden" name="SURVEY_ID" value="2621" />
+                </form>
+
+                <div class="noteBox">&nbsp;</div>
+              </div>
+            </li>    
+          </ul>   
+        </div>     
+      </div>    
+      <!--////////////////////////////// BRANDBAR ENDS /////////////////////////////////////////// -->
+
+      <!--////////////////////////////// TOP NAVBAR BEGINS /////////////////////////////////////// -->
+      <div class="navigation container">
+
+        <nav class="navbar"><!-- begin mobile navbar -->
+          <div class="navbar-mobile hidden-lg hidden-md"><!-- begin navbar header -->
+            <ul>
+              <li class="icon-li ">
+                <i class="fa fa-search"></i>
+                <div class="icon-text">Search</div>
+              </li>
+              <li class="logo-li ">
+                <img class="logo-img-li" src="http://cpc.convio.net/redesign/img/cpc/central-park-conservancy-logo.jpg" alt="Central Park Conservancy Logo">
+              </li>
+              <li class="icon-li nav-menu">            
+                <button type="button" class="navbar-toggle" >
+                  <i class="fa fa-bars "></i>
+                </button>  
+                <div class="icon-text hidden-lg hidden-md">Menu</div>
+              </li>
+            </ul>  
+          </div><!-- end mobile navbar -->   
+
+
+     
+          <!--////////////////////////////// DESKTOP MENU /////////////////////////////////////// -->
+          <div class="navbar-desktop hidden-sm hidden-xs">
+            <ul class="nav navbar-nav ">
+              <li class="dropdown visit">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visit</a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.centralparknyc.org/about/">Park Information</a></li>
+                  <li><a href="http://www.centralparknyc.org/things-to-see-and-do/">Things to See and Do</a></li>
+                  <li><a href="http://www.centralparknyc.org/events/">Calendar of Events</a></li>                       
+                  <li><a href="http://www.centralparknyc.org/maps/">Maps</a></li>
+                  <li><a href="http://www.centralparknyc.org/tours/">Tours</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+                  <li><a href="http://www.centralparknyc.org/alerts/">Alerts and Closures</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/history.html">History</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/faq.html">FAQ</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
+                </ul>
+              </li>
+              <li class="dropdown about">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About the Conservancy</a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/">About the Conservancy</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/">Mission and History</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/management-and-governance.html">Management and Governance</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/institute-for-urban-parks.html">Institute for Urban Parks</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/womens-committee/">Womens Committee</a></li>
+                  <li><a href="http://centralparknyc.tumblr.com">Central Park Conservancy Blog</a></li>
+                  <li><a href="http://www.centralparknyc.org/about/about-cpc/job-opportunities.html">Jobs</a></li>
+                </ul>
+              </li>
+              <li class="shop">
+                <a href="http://www.centralparknyc.org/shop/">Shop</a>
+              </li>
+              <li class="dropdown support">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support</a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.centralparknyc.org/support/">Support</a></li>
+                  <li><a href="http://www.centralparknyc.org/support/benefit-events/">Benefit Events</a></li>
+                  <li><a href="http://www.centralparknyc.org/support/index.html#claim">Claim a Piece of the Park</a></li>
+                  <li><a href="http://www.centralparknyc.org/support/corporate-giving/">Corporate Giving</a></li>
+                  <li><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=donate&amp;s_src=website&amp;s_subsrc=RD_donate_mainnav">Donate</a></li>
+                  <li><a href="http://support.centralparknyc.org/site/Donation2?df_id=3320&3320.donation=form1&s_src=website&s_subsrc=RD_honmem_mainnav">Honor/Memorial</a></li>
+                  <li><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&s_src=website&s_subsrc=RD_join_renew_mainnav">Join/Renew</a></li>
+                  <li><a href="http://www.centralparknyc.org/support/volunteer/">Volunteer</a></li>  
+                </ul>
+              </li>  
+              <li class="donate-hp">
+                <a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join/Renew</a>
+              </li>    
+              <li class="search-hp"><i class="fa fa-search desktop-menu" id="submit"></i></li>
+            </ul><!-- /.nav navbar-nav -->
+          </div><!-- /.navbar-collapse -->
+        </nav>
+
+      </div> <!-- end /.navbar -->
+      <!--////////////////////////////// TOP NAVBAR ENDS /////////////////////////////////////// -->
+
+
+
+
+      <div class="templateComponent" id="body"></div>
+      <!--- /////////// EVERYTHING BELOW THIS POINT GOES IN WRAPPER ////////////// -->
+      <div id="s8" style="display: none;">${url}</div>
+      <div class="row "> <!-- open follow us bottom-page -->
+        <div class="container">
+          <div class="col-xs-12 followus hidden-xs">
+            <ul>
+              <li class="icon ">
+                <a href="http://centralparknyc.tumblr.com" target="_blank"><i class="fa  fa-social-bottom fa-tumblr-square"></i></a>
+              </li>  
+              <li class="icon ">
+                <a href="http://www.instagram.com/centralparknyc" target="_blank"><i class="fa fa-social-bottom fa-instagram"></i></a>
+              </li>
+              <li class="icon ">
+                <a href="http://www.twitter.com/centralparknyc" target="_blank"><i class="fa  fa-social-bottom fa-twitter-square"></i></a>
+              </li>   
+              <li class="icon">
+                <a href="https://www.facebook.com/centralparknyc" target="_blank" ><i class="fa  fa-social-bottom  fa-facebook-square"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>   
+      </div>  <!-- close follow us bottom-page -->
+      <div class="container footer-container">
+        <footer class="hidden-xs row">
+          <div class="col-sm-3 hidden-xs">
+            <a href="http://www.centralparknyc.org/" target="_blank"><img class="logo" src="http://cpc.convio.net/redesign/img/cpc/CPCwhitelogo.png" alt="Central Park Conservancy Logo"></a><br>
+            <p>Central Park is managed and maintained by Central Park Conservancy under contract with the City of New York.</p>
+            <p><strong>Central Park Conservancy</strong><br>14 East 60th St<br>New York, NY, 10022<br>212.310.6600<br><br>&copy;2015 Central Park Conservancy.<br>All Rights Reserved.<br/></p> 
+          </div>
+          <div class="col-sm-9 hidden-xs">
+            <div class="row">
+              <div class="col-sm-3">
+                <a class="main" href="http://www.centralparknyc.org/about/">Plan Your Visit</a>
+                <ul>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/things-to-see-and-do/">Things to See and Do</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/events/">Calendar of Events</a></li>                       
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/maps">Maps</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/tours/">Tours</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/alerts">Alerts and Closures</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/history.html">History</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/faq.html">FAQ</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="footer-column col-sm-3">
+                <a class="main" href="http://www.centralparknyc.org/about/about-cpc/">About </a>
+                <ul>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/">Mission and History</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/management-board/">Management</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/financial-legal-information.html">Financial and Legal </a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/programs/">Programs</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/institute-for-urban-parks.html">Institute</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/womens-committee/">Womens Committee</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/support/volunteer/">Volunteer</a></li>
+                  <li class="footer-sub-item"><a href="http://centralparknyc.tumblr.com"> Blog</a></li>
+                </ul>
+              </div>
+              <div class="footer-column col-sm-3">
+                <a class="main" href="http://www.centralparknyc.org/support/">Support Us</a>
+                <ul>
+                  <li class="footer-sub-item"><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=RD_join_renew_mainnav">Join/Renew</a></li>
+                  <li class="footer-sub-item"><a href="http://support.centralparknyc.org/site/Donation2?df_id=3320&amp;3320.donation=form1&amp;s_src=website&amp;s_subsrc=RD_honmem_mainnav">Honor/Memorial</a></li>
+                  <li class="footer-sub-item"><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=donate&amp;s_src=website&amp;s_subsrc=RD_donate_mainnav">Donate</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/support/volunteer/">Volunteer</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/womens-committee/">Women's Committee</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/support/benefit-events/">Benefit Events</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/support/corporate-giving/">Corporate Giving</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/shop/">Shop</a></li>
+                </ul>
+               
+              </div>
+              <div class="footerColumn col-sm-3">
+                <a class="main">Resources</a>
+                <ul>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/press.html">Press</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/support/corporate-giving/">Partners</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/job-opportunities.html">Jobs</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/about-cpc/privacy-policy.html">Privacy Policy</a></li>
+                  <li class="footer-sub-item"><a href="https://secure2.convio.net/cpc/admin/AdminLogin?NEXTURL=https%3A%2F%2Fsecure2.convio.net%2Fcpc%2Fadmin%2FAdminHomePage">Admin</a></li>
+                  <li class="footer-sub-item"><a href="https://secure2.convio.net/cpc/site/ConsProfileUser">Your Preferences</a></li>
+                  <li class="footer-sub-item"><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
+                </ul>
+              </div>            
+            </div>
+          </div>  
+        </footer>
+        <footer class="hidden-sm hidden-md hidden-lg">
+          <div class="container">
+            <div class="col-xs-12"> 
+              <div id="footercenter" class="footerLink">  
+                <ul class="mobile-footer-menu">
+                  <li>
+                    <img class="footer-logo-mobile" src="http://cpc.convio.net/redesign/img/cpc/CPCwhitelogo.png" alt="Central Park Conservancy Logo">
+                  </li>
+                  <li class="footer-link">Central Park is managed and maintained by Central Park Conservancy under contract with the City of New York.</li>
+                  <li class="footer-link"><a href="http://www.centralparknyc.org/about/">Visit</a></li>
+                  <li class="footer-link"><a href="http://www.centralparknyc.org/about/about-cpc/">About</a></li>
+                  <li class="footer-link"><a href="http://www.centralparknyc.org/shop/">Shop</a></li>
+                  <li class="footer-link"><a href="http://www.centralparknyc.org/support/">Support</a></li>
+                  <li class="footer-link"><a href="http://www.centralparknyc.org/about/contact-us.html">Contact Us</a></li>
+                  <p class="footerAddress">Central Park Conservancy, 14 E. 60th St <br/> New York, NY, 10022&nbsp;&nbsp;Phone: 212.310.6600<br/>
+                     &#169;2015, Central Park Conservancy. All Rights Reserved.</p> 
+                </ul>   
+              </div>
+            </div>
+          </div>
+        </footer><!-- end mobileFooter -->
+      </div>
+      <div class="star-bar"> <!-- star bar -->
+        <a target="_blank" href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=3462#.VIhclzHF9ZA">
+          <img src="https://secure2.convio.net/cpc/images/content/pagebuilder/4star88x31.gif" alt="Charity Navigator logo" width="88" height="31" />
+        </a>
+        <a href="http://www.guidestar.org/organizations/13-3022855/central-park-conservancy.aspx" target="_blank">
+          <img src="http://widgets.guidestar.org/gximage2?o=6913470&l=v4" alt="Guidestar Logo"/>
+        </a>
+        <a target="_blank" href="http://search.newyork.bbb.org/reports.aspx?action=search2&page=0&cid=235&Name=central">
+          <img src="http://support.centralparknyc.org/images/content/pagebuilder/bbb-color.png" alt="BBB Logo" width="86px" />
+        </a>
+      </div> <!-- end star bar -->
+      
+  </div>  
+</body>
+<script>
+(function($){ 
+  
+$(function() {
+  $('.navbar-toggle').click(function() {
+    // Calling a function in case you want to expand upon this.
+    toggleNav();
+  });
+});
+
+function toggleNav() {
+if ($('#offcanvas-wrapper').hasClass('show-nav')) {
+  // Do things on Nav Close
+  $('#offcanvas-wrapper').removeClass('show-nav');
+} else {
+  // Do things on Nav Open
+  $('#offcanvas-wrapper').addClass('show-nav');
+}
+
+//$('#site-wrapper').toggleClass('show-nav');
+}
+
+})(jQuery);
+
+</script>
+</html>

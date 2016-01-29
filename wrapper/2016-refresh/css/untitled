@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 767px) {
+.interest-checkbox {
+	margin-left: -15px;
+	text-align: right;
+}
+
+label.wrapable {
+    float: left;
+    margin: 0 auto;
+}
+}
