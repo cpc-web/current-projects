@@ -36,9 +36,9 @@
   <link href="http://www.centralparknyc.org/assets/css/bootstrap-303-min.css" rel="stylesheet" />
 
   <!-- Custom styles for CPC site -->
-  <link href="css/v06-push-oc.css" rel="stylesheet" />
+  <link href="css/v07.css" rel="stylesheet" />
   <link href="http://cpc.convio.net/lightbox/css/lightbox-css-min.css" rel="stylesheet" />
-  <link href="http://cpc.convio.net/2015-refresh/global-test-test.css" rel="stylesheet">
+  <link href="css/global.css" rel="stylesheet">
   <link href="http://cpc.convio.net/redesign/css/calendar.css" rel="stylesheet">
 
   <!-- Bootstrap core JavaScript -->
@@ -92,10 +92,7 @@
 
     ga('send', 'pageview');
   </script>
-  <style>
 
-
-  </style>
 </head>
 <body>
   <div id="offcanvas-wrapper">
@@ -261,7 +258,7 @@
             <!--////////////////////////////// MOBILE NAVBAR BEGINS /////////////////////////////////////// -->
             <div class="navbar-mobile hidden-lg hidden-md">
               <ul>
-                <li class="icon-li ">
+                <li class="icon-li search-mobile">
                   <i class="fa fa-search"></i>
                   <div class="icon-text">Search</div>
                 </li>
@@ -334,7 +331,27 @@
             </div><!-- /.navbar-collapse -->
           <!--////////////////////////////// TOP NAVBAR ENDS /////////////////////////////////////// -->
           </nav>
-        </div> 
+
+          <!-- ////////////////////////////// SEARCH DROPDOWN /////////////////////////////////////// -->
+          <div class="search-bar">
+            <form class="nav" id="search-form" name="search-form" method="get" action="http://support.centralparknyc.org/site/Search">
+              <div class="">
+              <!--<span class="glyphicon glyphicon-search searchIcon"></span>-->
+              <ul>
+                <li class="search-input-li">
+                  <!-- work on this after launch -->
+                  <!-- <span class="blinking-search">|</span> -->
+                  <input type="search" class="search-input" name="query" placeholder="Search" result="6" />
+                </li>
+                <li class="search-button-li">  
+                  <button class="search-btn" name="submit" alt="search button" id="submit" title="Search"><i class="fa fa-search"></i></button>
+                </li>  
+              </ul>  
+              </div>
+            </form>
+          </div>
+
+        </div> <!-- ////////////////////////////// END NAVIGATION CONTAINER ///////////////////////////////////////
         <div class="click-off-mobile-menu">
           <div class="templateComponent" id="body"></div>
           <!--- /////////// EVERYTHING BELOW THIS POINT GOES IN WRAPPER ////////////// -->
@@ -473,6 +490,18 @@
       $('#offcanvas-menu').addClass('offcanvas-menu-active');
     }
   }
+
+  function searchClick() {
+    $('.search-bar').toggle(300);
+  }
+
+  $('.search-hp').on("click", function(){
+    searchClick();
+  });
+
+  $('.search-mobile').on("click", function(){
+    searchClick();
+  });
 
   // $('li.dropdown').on("mouseenter", function(){
   //   $(this).find("ul.dropdown-menu").slideToggle();

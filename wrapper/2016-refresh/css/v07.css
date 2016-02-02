@@ -124,6 +124,9 @@
   font-size: 25px;
   margin-top: 10px; }
 
+.navbar {
+  margin-bottom: 0; }
+
 .navbar-nav {
   width: 100%;
   padding: 0 2% 0 0; }
@@ -151,7 +154,8 @@
     background-image: linear-gradient(#E20034, #860020); }
   .navbar-nav .search-hp {
     width: 15%;
-    text-align: center; }
+    text-align: center;
+    cursor: pointer; }
   .navbar-nav li a {
     color: white;
     font-size: 18px;
@@ -429,4 +433,77 @@ ul.navbar-mobile-menu {
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
-/*# sourceMappingURL=v06-push-oc.css.map */
+.search-bar {
+  display: none;
+  min-height: 50px;
+  background-color: #C5C5C5;
+  position: relative;
+  border-radius: 2px;
+  margin: -1px 1px 0; }
+  .search-bar li {
+    display: table-row;
+    float: left;
+    text-align: center; }
+  .search-bar ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0; }
+  .search-bar .search-input-li {
+    width: 90%; }
+  .search-bar .search-button-li {
+    width: 10%; }
+
+.search-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #636466;
+  font-size: 18px;
+  font-family: 'Titling Gothic FB Cond', sans-serif; }
+
+.search-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #636466;
+  font-size: 18px;
+  font-family: 'Titling Gothic FB Cond', sans-serif; }
+
+.search-input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #636466;
+  font-size: 18px;
+  font-family: 'Titling Gothic FB Cond', sans-serif; }
+
+.search-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #636466;
+  font-size: 18px;
+  font-family: 'Titling Gothic FB Cond', sans-serif; }
+
+.search-input {
+  height: 38px;
+  background: #C5C5C5;
+  outline: none;
+  padding: 0 4px 0;
+  width: 100%;
+  margin: 2px 20px;
+  border-bottom: 1px solid gray;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.navbar-form {
+  margin-top: 0; }
+
+.search-btn {
+  font-size: 22px;
+  color: #636466;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  top: 3px;
+  position: relative; }
+
+.search-mobile {
+  cursor: pointer; }
+
+/*# sourceMappingURL=v07.css.map */
