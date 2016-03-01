@@ -1,0 +1,276 @@
+<!-- guided tours REBOOT - v2 - 30Apr2015 -->
+<link href="http://cpc.convio.net/cpc-eventix/tourpage_styles.css" rel="stylesheet" type="text/css" /> <link href="http://cpc.convio.net/site/PageServer?pagename=event_tix_styles&amp;pgwrap=n" rel="stylesheet" type="text/css" />
+<style type="text/css">
+@media only screen and (max-width: 767px) {
+  .main-body {
+    width: 100%;
+  }
+}
+.tilerow {
+  column-width:21em;
+  -moz-column-width:21em;
+  -webkit-column-width:21em;
+  column-gap:0.5em;
+  -moz-column-gap:0.5em;
+  -webkit-column-gap:0.5em;  
+}
+a.btn.btn-primary.guided-tour-parent-link, a.btn.btn-primary.guided-tour-parent-link:hover {
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -o-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  column-break-inside: avoid;
+  -webkit-backface-visibility: hidden;
+}
+</style>
+<!--style>
+.panel {
+  display:inline-block;
+  margin:.5em;
+  padding:0; 
+  width:97%;
+}
+.guided-tour-label {
+  font-weight:bold;
+  color:#000;
+    padding-left:0;
+}
+.guided-tour-dates {
+    margin-bottom:10px;
+}
+
+.btn-primary {
+  background: #68b247;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 0px #666666;
+  -moz-box-shadow: 0px 1px 0px #666666;
+  box-shadow: 0px 1px 0px #666666;
+  color: #ffffff !important;
+  font-size: 12px;
+  padding: 8px 20px 8px 20px !important;
+  border: solid #79bf43 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.btn-primary:hover {
+  background: #68b247;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform:uppercase;
+}
+
+</style -->
+
+<link href="http://cpc.convio.net/css/tabs/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
+
+<div id="urid" style="display: none">${param.urid}</div>
+<!-- LOAD all parent and child events first -->
+<div id="parentXML" style="display: none;">
+<!-- FILTER "Parent Events - Tours" where type = Tours; template: Tours Listing -->
+<div class="templateComponent" id="templatelist-643884606" style="display: inline;"></div>
+</div>
+<div id="eventXML" style="display: none;">
+<!-- FILTER "#Events, App Feed, next 12 weeks" where date = 12 weeks incl today; template: All-tour page display list -->
+<div class="templateComponent" id="templatelist-643884607" style="display: inline;"></div>
+</div>
+<div id="parentPopovers" style="display: none;"></div>
+<div id="landingTour" style="display: none;">${param.tourid}</div>
+<div id="landingParent" style="display: none;">${param.parentid}</div>
+<div id="vcStaff" style="display: none;">${param.vcstaff}</div>
+<div id="isAnon" style="display: none;"><t:if test="user.isanonymous == true">true</t:if><t:else><t:value id="user.fullname"></t:value></t:else></div>
+<div id="isMember" style="display: none;">no</div>
+<div id="topCopy">
+<p>Learn the story of the Park&rsquo;s history, design, and ecology, and get an insider&rsquo;s look at the world&rsquo;s greatest urban park with the people who take care of it. Welcome Tours are free and offer an introduction to some of the Park's most well-known highlights. Premier Tours are ticketed and focus on more specialized topics, plus they are the only tours that help support the care of Central Park!</p>
+<p><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=RD_guided_tours" target="_blank">Become a member of the Conservancy</a> to receive discounts on ticketed tours and access to members-only tours.</p>
+<p>Space is limited; advance registration suggested for ticketed tours. Groups of seven or more must schedule a <a href="/preview!www.centralparknyc.org/tours/custom-tours.html">Group Tour</a>.</p>
+</div>
+<div class="row">
+<div class="col-xs-12"><!--tabs-->
+<ul class="nav nav-filter nav-tabs" id="guided_tours_tabs">
+<li class="active dropdown"><a class="dropdown-toggle" href="#" id="guided_drop" data-toggle="dropdown"><span class="hidden-xs font2em">Guided Tours <strong class="caret"></strong></span><span class="visible-xs">Guided<strong class="caret"></strong></span></a>
+<ul class="dropdown-menu menu2">
+  <li>
+    <a class="dropdown-link" href="/preview!www.centralparknyc.org/tours/tour-policies.html" target="_blank" tabindex="-1">Policies</a>
+  </li>
+  <li>
+    <a class="dropdown-link" href="/preview!www.centralparknyc.org/tours/tour-faq.html" target="_blank" tabindex="-1">FAQ</a>
+  </li>
+</ul>
+</li>
+<li><a class="nav-link" href="/preview!www.centralparknyc.org/tours/schedule.html" target="_blank" id="schedule_link" tabindex="-1"><span class="hidden-xs font2em">Schedule</span><span class="visible-xs">Schedule</span></a></li>
+<li><a class="nav-link" href="/preview!www.centralparknyc.org/tours/custom-tours.html" target="_blank" id="custom_link" tabindex="-1"><span class="hidden-xs font2em">Custom and Group Tours</span><span class="visible-xs">Custom</span></a></li>
+<li><a class="nav-link" href="/preview!www.centralparknyc.org/tours/self-guided/" target="_blank" id="self_link" tabindex="-1"><span class="hidden-xs font2em">Self-Guided Tours</span><span class="visible-xs">Self</span></a></li>
+<li class="search-tab">
+<form role="search" class="navbar-form navbar-left"><div class="form-group"><input id="guided_tours_search" type="search" class="form-control" placeholder="Search" value="" onkeyup="filterTours('search',this.value);" data-toggle="tab"></div></form>
+</li>
+</ul>
+<!--end tabs--></div>
+<!-- /.col-xs-12 --></div>
+<!-- /.row -->
+<div class="row"><!-- main content -->
+<div class="col-xs-12"><!-- attraction panes -->
+<div class="tab-content">
+<div class="tab-pane active">
+<div class="tilerow" id="guided_tour_panels">
+</div>
+</div>
+</div>
+</div>
+<!-- /.col-xs-12 -->
+<!-- /.row -->
+
+<div id="guided_tour_panel_template" style="display:none;"><div class="panel panel-default guided-tour-panel"><div class="panel-body"><h4 class="guided-tour-parent-name"><a class="guided-tour-parent-link" href="#" target="_blank"></a></h4><a class="guided-tour-parent-link" href="#" target="_blank"><img class="img-responsive guided-tour-image" src=""></a><p class="guided-tour-description"></p><p class="guided-tour-near"><span class="guided-tour-label">Near:&nbsp;</span></p><p class="guided-tour-highlights"><span class="guided-tour-label">Highlights:&nbsp;</span></p><div class="guided-tour-dates"><span class="guided-tour-label">Upcoming Dates &amp; Times:&nbsp;</span><br/><div class="guided-tour-dates-table"></div></div><p class="text-center"><a href="#" class="btn btn-primary guided-tour-parent-link" type="button" target="_blank">More Info</a></p></div></div></div>
+<div id="guided_tour_dates_template" style="display:none;"><div class="guided-tour-date-row"><a class="guided-tour-date-link" href="#" target="_blank"></a></div></div>
+<script type="text/javascript">// <![CDATA[
+jQuery.noConflict();
+// ]]></script>
+<script type="text/javascript">// <![CDATA[
+if(  document.addEventListener  ) {
+  //alert("you got IE9 or greater");
+  var dunny = 0;
+  //window.location='http://www.centralparknyc.org/visit/tours/guided-tours/guided-tours-info.html';
+} else {
+  window.location='http://www.centralparknyc.org/visit/tours/guided-tours/guided-tours-info.html';
+}
+function filterTours( filterType, filterName ) {
+  if (filterType && filterType == 'search' && typeof filterSearch == 'function') {
+    jQuery('#guided_tour_panels div.panel.guided-tour-panel').hide();
+    filterSearch(filterName);
+    return true;
+  } else {
+    console.log('filterTours called with filterType="'+filterType+'", filterName="'+filterName+'".');
+    return false;
+  }
+}
+function filterSearch(filterText) {
+  if (filterText) {
+    var filterTest = new RegExp(filterText, 'i');
+    jQuery('#guided_tour_panels div.panel.guided-tour-panel div.panel-body').each(function() {
+      if (jQuery(this).children('h4.guided-tour-parent-name').children('a.guided-tour-parent-link')[0].innerHTML.match(filterTest) || jQuery(this).children('p.guided-tour-description')[0].innerHTML.match(filterTest)) {
+        jQuery(this).parent('div.panel.guided-tour-panel').show();
+      }
+    });
+  } else {
+    jQuery('#guided_tour_panels div.panel.guided-tour-panel').show();
+  }
+}
+(function($) {
+  window.parentEvents = [];
+  var parentEventElems = $('#parentXML').find('event');
+  // create array of parent events
+  parentEventElems.each(function(index) {
+    var mylites = $(this).find('highlights').html().toString();
+    var myslice = mylites.slice(0,-7);
+    //console.log('raw: ',mylites,' - sliced: ',myslice);
+    parentEvents.push({
+      'id':    $(this).find('id').text(),
+      'name':  $(this).find('name:first').text(),
+      'img':   $(this).find('imgurl').text(),
+      'near':   $(this).find('near').html(),
+      'hilites':   myslice,
+      'url':   $(this).find('url').text() || '#',
+      'desc':  $(this).find('short_description').html(),
+      'categories': $(this).find('categories:first').find('category'),
+      'children': []
+    });
+  });
+  var childEventElems = $('#eventXML').find('event');
+  // add child events to parents
+  childEventElems.each(function(index) {
+    var childEvent = {
+      'id':    $(this).find('id').text(),
+      'name':  $(this).find('name:first').text(),
+      'url':   $(this).find('url').text(),
+      'date':  $(this).find('date').text(),
+      'time':  $(this).find('time').text(),
+      'start': new Date($(this).find('date').text()+' '+$(this).find('time').text().split(' to ')[0]),
+      'type':  $(this).find('type').text(),
+      //'cost':  $(this).find('ticketed').text(),
+    };
+    var childParent = $(this).find('parent').text();
+    for (var o=0; o<parentEvents.length; o++) {
+      if (parentEvents[o].id && parentEvents[o].id == childParent) parentEvents[o].children.push(childEvent);
+    };
+  });
+  // sort parentEvents alphabetically by name
+  parentEvents.sort(function(a,b) {
+    if (a.name && b.name && a.name != b.name) return (a.name < b.name ? -1 : 1);
+    else return parseInt(a.id) - parseInt(b.id);
+  });
+  // iterate through parentEvents to create a "panel" from the template and append it to #guided_tour_panels
+  for (var p=0; p<parentEvents.length; p++) {
+    var newParent = $('#guided_tour_panel_template div.guided-tour-panel').clone();
+    newParent.attr('id', 'guided_tour_parent_'+parentEvents[p].id);
+    newParent.find('.guided-tour-parent-name .guided-tour-parent-link').text(parentEvents[p].name);
+    newParent.find('.guided-tour-parent-link').attr('href', parentEvents[p].url);
+    newParent.find('.guided-tour-image').attr('src', parentEvents[p].img);
+    newParent.find('.guided-tour-description').html(parentEvents[p].desc);
+    if (parentEvents[p].near && parentEvents[p].near.length > 0) {
+      newParent.find('.guided-tour-near').append(parentEvents[p].near);
+    } else {
+      newParent.find('.guided-tour-near').hide();
+    }
+    if (parentEvents[p].hilites && parentEvents[p].hilites.length > 0) {
+      newParent.find('.guided-tour-highlights').append(parentEvents[p].hilites);
+    } else {
+      newParent.find('.guided-tour-highlights').hide();
+    }
+    parentEvents[p].children.sort(function(a,b) {
+      if (a.start && b.start && a.start != b.start) {
+        return (a.start < b.start ? -1 : 1);
+      } else if (a.name && b.name && a.name != b.name) {
+        return (a.name < b.name ? -1 : 1);
+      } else return parseInt(a.id) - parseInt(b.id);
+    });
+    if (parentEvents[p].children.length > 0) {
+      //newParent.find('.guided-tour-cost').append(parentEvents[p].children[0].cost);
+      for (var c=0; c<parentEvents[p].children.length; c++) {
+        var childRow = $('#guided_tour_dates_template .guided-tour-date-row').clone();
+        childRow.find('.guided-tour-date-link').attr('href',parentEvents[p].children[c].url);
+        childRow.find('.guided-tour-date-link').text(parentEvents[p].children[c].date + ' - ' + parentEvents[p].children[c].time);
+        if (c > 2) childRow.addClass('hidden');
+        newParent.find('.guided-tour-dates .guided-tour-dates-table').append(childRow);
+      }
+    } else {
+      newParent.addClass('hidden');
+    }
+    $('#guided_tour_panels').append(newParent);
+  }
+  
+  ////////////////////////////// END TICKET APP METHODS /////////////////////////
+  
+  function setUrid(urid) {
+    $.ajax({
+      url: window.location+'&s_urid='+urid,
+      success: function(data, textStatus, jqxhr){
+        console.log('ajax sesh variable success...');
+        console.log(data.responseText);
+        console.log(textStatus);
+        console.log(jqxhr);
+      },
+      error: function(data, textStatus, jqxhr){
+        console.log('ajax sesh variable failure...');
+        console.log(data.responseText);
+        console.log(textStatus);
+        console.log(jqxhr);
+      }
+    });
+    setCookie('CPC_mobilead',urid);
+  }
+  
+  /* onload */
+  $(function() {
+    myUrid = $('#urid').text();
+    if (myUrid) { 
+      setUrid(myUrid);
+    }
+  })
+})(jQuery);
+// ]]></script>
+<!-- END TABS TABS TABS -->

@@ -1,0 +1,170 @@
+2014 Redesign Full Display
+<!-- parent template styles -->
+
+
+#bodyScript { display: none; }
+#memDonWrap { width: 100%; margin: 0; }
+#memDonWrap .memWrapCol {
+float: left;
+margin: 5px 5px 0;
+width: 100%;
+padding-right: 20px;
+}
+#memDonWrap h2.leftHead { width: 260px; }
+.dropdownShare:hover .dropdown-menu-share { display: block; }
+.dropdown-menu-share { min-width: 180px; margin: 0; }
+.utilityRow { margin-top: 15px; margin-bottom: 15px; }
+#breadcrumbs { margin-left:-30px;}
+hr {
+margin-top: 0px;
+margin-bottom: 5px;
+border-right: 0px none;
+border-width: 1px 0px 0px;
+border-style: solid none none;
+border-color: #DFECCD -moz-use-text-color -moz-use-text-color;
+-moz-border-top-colors: none;
+-moz-border-right-colors: none;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+border-image: none;
+}
+#memDonWrap li.membersItem { margin-bottom: 20px; padding-bottom: 20px; }
+
+.mainImageEvent {
+float:none; 
+}
+#mainImage img {
+display: block;
+height: auto;
+margin: 0px auto 10px;
+max-width: 100%;
+padding: 0px 15px;
+}
+@media(max-width:767px) {
+#mainImage img {
+float: none;  
+}
+}
+#memDonWrap h2 { padding: 6px 15px; }
+.myTix {padding-left: 0; padding-right: 0;}
+.smalltext {font-size: 12px; margin-bottom: 10px; font-style: italic;}
+#ticketTypeArea { height: 60px; }
+#tixSection {
+border: 1px solid rgb(104, 178, 71);
+padding: 10px 20px;
+border-radius: 5px;
+margin: 15px 0; 
+background-color: #F7F7F7;
+}
+#memDonWrap .memWrapCol #ticketInterface input.discCode { width: 60px; margin: 10px; }
+
+@media(max-width:767px) {
+.left-nav {
+min-height: 30px;
+padding: 0px;
+width: 100%;
+}
+.secondnav { visibility: visible; }
+#tixSection {padding:5px;}
+.top-image { visibility: hidden; height: 55px; min-height: 55px; }
+}
+
+/*.btn-primary:focus, .btn-primary:active {
+background-color: #68B247;  
+}*/
+
+h3 {
+margin-top: 20px;
+margin-bottom: 5px;
+}
+
+<!-- child template css -->
+
+.myTix {padding-left: 10px; padding-right: 10px;}
+#memDonWrap .memWrapCol #ticketInterface input.discCode { width: 60px; margin: 10px; }
+
+
+<!-- guided landing page tours styles -->
+.tilerow {
+column-width:21em;
+-moz-column-width:21em;
+-webkit-column-width:21em;
+column-gap:0.5em;
+-moz-column-gap:0.5em;
+-webkit-column-gap:0.5em;  
+}
+.panel {
+display:inline-block;
+margin:.5em;
+padding:0; 
+width:97%;
+}
+.guided-tour-label {
+font-weight:bold;
+color:#000;
+padding-left:0;
+}
+.guided-tour-dates {
+margin-bottom:10px;
+}
+
+<!-- tourstyles stylesheet -->
+
+#tourListHorizontal tr { margin: 10px 0; }
+.showMore { width: 200px; }
+.nameColumn, .dateColumn { min-width: 30%; }
+.tourDetails { width: 100px; }
+
+.nav-tabs > li > a {
+border: 1px solid #ddd;
+}  
+
+@media (max-width: 768px) {
+.nav-tabs > li > a {
+font-size: 12px;
+} 
+}
+
+#contentMain { width: 935px;  line-height: 18px; }
+
+/* necessary??? CHANGED h1 COLOR*/
+h1 { font-size: 42px;  font-weight: normal; }
+h2 { font-size: 32px; line-height: 40px; color: #666666; font-weight: normal; }
+.h3 { padding: 8px; font-weight: bold; background-color: rgb(236, 238, 232); text-transform: uppercase; }
+
+#parentTable {
+width: 597px;
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+background-color:#f0f1ee
+}
+
+
+#parentTable td {
+border-bottom: 1px solid #ccc;
+border-right: 1px solid #ccc;
+font-size: 16px;
+}
+
+
+p {
+font-family: 'Titling Gothic FB Narr', sans-serif;
+}
+
+
+#parentTable td a, #parentTable td a:link, #parentTable td a:visited {
+color: #666666;
+text-decoration: underline;
+}
+#parentTable td a:hover, #parentTable tr:hover a {
+color: #3c9314;
+text-decoration: underline;
+}
+#parentTable tr.green td {
+background: #d0e9bd;
+}
+
+.btnDates {font-weight: bold; font-size:15px; margin-top:20px; cursor:pointer; color:#77C043;}
+
+
+.lineTours {padding-bottom:15px; padding-top:15px; border-bottom: solid 1px lightgrey; margin-right: 0px; margin-left: 0px;}

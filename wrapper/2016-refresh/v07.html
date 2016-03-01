@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- jan 01 2016 marysitz -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,11 +7,9 @@
   <meta name="description" content="${description}">
   <meta name="author" content="Central Park Conservancy">  
 
-  <!-- UNCOMMENT WHEN GOES LIVE -->
   <title><t:value id="title">title</t:value> - The Official Website of Central Park NYC</title>
-<!--   <t:value id="meta.keywords">meta.keywords</t:value>
-  <t:value id="meta.description">meta.description</t:value> -->
-  <!-- UNCOMMENT WHEN GOES LIVE -->
+  <t:value id="meta.keywords">meta.keywords</t:value>
+  <t:value id="meta.description">meta.description</t:value>
 
   <!-- Open Graph data -->
   <meta property='og:title' content='${title}' />
@@ -36,16 +33,15 @@
   <link href="http://www.centralparknyc.org/assets/css/bootstrap-303-min.css" rel="stylesheet" />
 
   <!-- Custom styles for CPC site -->
-  <link href="css/v07.css" rel="stylesheet" />
-  <link href="http://cpc.convio.net/lightbox/css/lightbox-css-min.css" rel="stylesheet" />
-  <link href="css/global.css" rel="stylesheet">
+  <link href="http://cpc.convio.net/2015-refresh/css/wrapper.css" rel="stylesheet" />
+  <link href="http://cpc.convio.net/2015-refresh/css/global.css" rel="stylesheet" />
+  <link href="http://cpc.convio.net/2015-refresh/css/modal.css" rel="stylesheet">
   <link href="http://cpc.convio.net/redesign/css/calendar.css" rel="stylesheet">
+
 
   <!-- Bootstrap core JavaScript -->
   <script type='text/javascript' src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-  <!-- script type='text/javascript' src="http://cpc.convio.net/wrapper-test/all-cpc-js.js"></script -->
-  <!-- uncomment when done with test! -->
   
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <script type='text/javasbootscript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -92,17 +88,130 @@
 
     ga('send', 'pageview');
   </script>
+  <style>
+/* show mobile nav on small screens for tablet */
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin: 0;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .navbar-text {
+      float: none;
+      margin: 15px 0;
+  }
+  .collapsing {
+      overflow: hidden!important;
+  }
+}
+
+.navbar-collapse {
+  width: 20%;
+}
+
+.main-body {
+  margin: 10px;
+}
+
+  </style>
 
 </head>
+
 <body>
+  <!--////////////////////////////// MODAL BEGINS ///////////////////////////////////////// -->
+  <div id="captureModal">
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="row">
+              <button type="button" class="close hidden-sm hidden-md hidden-lg" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">
+                <img src="http://www.centralparknyc.org/assets/images/2014/2014_recruit_modal_grey_close_v3.png" />
+              </button>
+            </div>  
+            <div class="row">
+              <div class="modal-title">Get the Inside Scoop on Central Park!</div>
+            </div>       
+          </div>
+          <div class="modal-footer">
+            <div class="modal-sub-title">
+              Be the first to know what's going on in the Park, unearth Park secrets, get special offers, and more. 
+            </div>
+            <div class="row sign-up-row">
+              <form novalidate="novalidate" id="lbox_register_form" name="lbox_register_form" method="post" action="javascript:void(0);">
+                <input id="cons_email" name="cons_email" placeholder="Your Email" type="text">
+                <input id="cons_zip_code" name="cons_zip_code" placeholder="Your ZIP Code" type="text">
+                <input value="true" name="cons_email_opt_in" type="hidden">
+                <input name="cons_info_component" value="true" type="hidden">
+                <input name="cons_mail_opt_in" value="true" type="hidden">
+                <input name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" type="hidden">
+                <input name="NEXTURL" value="http://www.centralparknyc.org/cpc-registration.html?show=all" type="hidden">
+                <input name="s_src" value="website" type="hidden">
+                <input name="s_subsrc" value="insider_lightbox_2015" type="hidden">
+                <input name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." type="hidden">
+                <input name="SURVEY_ID" value="4520" type="hidden">
+                <input name="ERRORURL" id="ERRORURL" value="http://www.centralparknyc.org/cpc-registration.html" type="hidden">
+                <input name="ifUsername" id="ifUsername" value="[[S1:user_name]]" type="hidden">
+                <button class="btnSignUpLightbox clickable" id="formSubmit">
+                  SIGN UP NOW
+                </button>  
+              </form>
+              <div class="bottom-link hidden-sm hidden-md hidden-lg">
+                <div class="close bottom-link" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">Continue to CentralParkNYC.org</span>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+  </div>
+  <!--////////////////////////////// MODAL ENDS ///////////////////////////////////////// -->
+
   <div id="offcanvas-wrapper">
     <div id="site-canvas">
+
+<!--       <div class="row">
+        <div class="col-xs-12 alert">
+          <ul>
+            <li class="alert-text">
+              <strong><i class="fa fa-exclamation"></i>&nbsp;&nbsp;ALERT:</strong> Large sections of the Drives will be closed on Sunday, November 1 for the NYC Marathon. <br/><a href="http://www.centralparknyc.org/alerts">Read more</a>.
+            </li>
+            <li class="alert-btn">                
+              <button type="button" class="close"><i class="fa fa-times"></i></button>
+            </li>  
+          </ul>  
+        </div>
+      </div> -->
 
       <!--////////////////////////////// MOBILE SLIDER /////////////////////////////////////// -->
       <div class="mobile-menu" id="offcanvas-menu">
         <ul class="navbar-mobile-menu">
           <li class="">
-            <button class="join-renew-mobile"><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join/Renew</a>
+            <button class="join-renew-mobile"><a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join or Renew</a>
             </button>
           </li>   
           <li class="dropdown">
@@ -158,64 +267,10 @@
           </span>  
         </ul>
       </div>
-      <!--////////////////////////////// END MOBILE SLIDER /////////////////////////////////////// -->
-      
-      <!--////////////////////////////// MODAL BEGINS ///////////////////////////////////////// -->
-      <div class="modal fade" id="captureModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="row">
-                <button type="button" class="close hidden-sm hidden-md hidden-lg" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <button type="button" class="close hidden-xs" data-dismiss="modal" aria-label="Close">
-                  <img src="http://www.centralparknyc.org/assets/images/2014/2014_recruit_modal_grey_close_v3.png" />
-                </button>
-              </div>  
-              <div class="row">
-                <div class="modal-title">Get the Inside Scoop on Central Park!</div>
-              </div>       
-            </div>
-            <div class="modal-footer">
-              <div class="modal-sub-title">
-                Be the first to know what's going on in the Park, unearth Park secrets, get special offers, and more. 
-              </div>
-              <div class="row sign-up-row">
-                <form novalidate="novalidate" id="lbox_register_form" name="lbox_register_form" method="post" action="javascript:void(0);">
-                  <input id="cons_email" name="cons_email" placeholder="Your Email" type="text">
-                  <input id="cons_zip_code" name="cons_zip_code" placeholder="Your ZIP Code" type="text">
-                  <input value="true" name="cons_email_opt_in" type="hidden">
-                  <input name="cons_info_component" value="true" type="hidden">
-                  <input name="cons_mail_opt_in" value="true" type="hidden">
-                  <input name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" type="hidden">
-                  <input name="NEXTURL" value="http://www.centralparknyc.org/cpc-registration.html?show=all" type="hidden">
-                  <input name="s_src" value="website" type="hidden">
-                  <input name="s_subsrc" value="insider_lightbox_2015" type="hidden">
-                  <input name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." type="hidden">
-                  <input name="SURVEY_ID" value="4520" type="hidden">
-                  <input name="ERRORURL" id="ERRORURL" value="http://www.centralparknyc.org/cpc-registration.html" type="hidden">
-                  <input name="ifUsername" id="ifUsername" value="[[S1:user_name]]" type="hidden">
-                  <button class="btnSignUpLightbox clickable" id="formSubmit">
-                    SIGN UP NOW
-                  </button>  
-                </form>
-                <div class="bottom-link hidden-sm hidden-md hidden-lg">
-                  <div class="close bottom-link" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">Continue to CentralParkNYC.org</span>
-                  </div>
-                </div>
-              </div>  
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
-        <!--////////////////////////////// MODAL ENDS ///////////////////////////////////////// -->
-
-      
+      <!--////////////////////////////// END MOBILE SLIDER /////////////////////////////////////// --> 
 
         <!--////////////////////////////// BRANDBAR BEGINS ///////////////////////////////////////// -->
-        <div class="brandbar hidden-sm hidden-xs">
+        <div class="brandbar">
           <div class="container">
             <ul>
               <li>  
@@ -224,7 +279,7 @@
                 </a>
               </li>
               <li class="trust-language">
-                Official Caretakers of Central Park
+              <!--   Official Caretakers of Central Park -->
               </li>  
               <li class="email-follow-top">
                 <div id="emailFollowUs">
@@ -234,9 +289,9 @@
                     <input type="hidden" name="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit Survey" />
 
                     <span class="email-capture-copy">Get the Inside Scoop on Central Park Events!</span> <br/>
-                    <input class="primaryEmail emailShareInput" maxlength="40" name="cons_email" onblur="if(this.value == '') this.value='Your Email'" onfocus="if(this.value == 'Your Email') this.value = '';" size="13" type="text" value="Your Email" >
+                    <input class="primaryEmail emailShareInput" maxlength="40" name="cons_email" onblur="if(this.value == '') this.value='Your Email'" onfocus="if(this.value == 'Your Email') this.value = '';" size="13" type="text" value="Your Email" />
                       <button class="clickable submitButton">Sign Up</button>
-                    </input>  
+                    
                     <input type="hidden" name="s_src" value="website" />
                     <input type="hidden" name="s_subsrc" value="2014_followBox" />
                     <input type="hidden" name="denySubmit" value="" alt="This field is used to prevent form submission by scripts." />
@@ -256,19 +311,22 @@
           <nav class="navbar">
 
             <!--////////////////////////////// MOBILE NAVBAR BEGINS /////////////////////////////////////// -->
-            <div class="navbar-mobile hidden-lg hidden-md">
+            <div class="navbar-mobile ">
               <ul>
                 <li class="icon-li search-mobile">
                   <i class="fa fa-search"></i>
                   <div class="icon-text">Search</div>
                 </li>
                 <li class="logo-li ">
-                  <img class="logo-img-li" src="http://cpc.convio.net/redesign/img/cpc/central-park-conservancy-logo.jpg" alt="Central Park Conservancy Logo">
+                  <a href="http://centralparknyc.org">
+                    <img class="logo-img-li" src="http://cpc.convio.net/redesign/img/cpc/central-park-conservancy-logo.jpg" alt="Central Park Conservancy Logo">
+                  </a>  
                 </li>
                 <li class="icon-li">
                   <div class="nav-toggle-wrapper">            
                     <div id="nav-toggle">
-                      <span></span></a>
+                      <i class="fa fa-bars"></i>
+                      <div class="icon-text">Menu</div>
                     </div>
                   </div>
                 </li>
@@ -277,10 +335,10 @@
             <!--////////////////////////////// MOBILE NAVBAR ENDS /////////////////////////////////////// -->
        
             <!--////////////////////////////// DESKTOP MENU /////////////////////////////////////// -->
-            <div class="navbar-desktop hidden-sm hidden-xs">
+            <div class="navbar-desktop ">
               <ul class="nav navbar-nav ">
                 <li class="dropdown visit">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visit</a>
+                  <a href="http://www.centralparknyc.org/about/" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Visit</a>
                   <ul class="dropdown-menu">
                     <li><a href="http://www.centralparknyc.org/about/">Park Information</a></li>
                     <li><a href="http://www.centralparknyc.org/things-to-see-and-do/">Things to See and Do</a></li>
@@ -295,9 +353,8 @@
                   </ul>
                 </li>
                 <li class="dropdown about">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About the Conservancy</a>
+                  <a href="http://www.centralparknyc.org/about/about-cpc/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">About the Conservancy</a>
                   <ul class="dropdown-menu">
-                    <li><a href="http://www.centralparknyc.org/about/about-cpc/">About the Conservancy</a></li>
                     <li><a href="http://www.centralparknyc.org/about/about-cpc/">Mission and History</a></li>
                     <li><a href="http://www.centralparknyc.org/about/about-cpc/management-and-governance.html">Management and Governance</a></li>
                     <li><a href="http://www.centralparknyc.org/about/about-cpc/institute-for-urban-parks.html">Institute for Urban Parks</a></li>
@@ -311,9 +368,8 @@
                   <a href="http://www.centralparknyc.org/shop/">Shop</a>
                 </li>
                 <li class="dropdown support">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support</a>
+                  <a href="http://www.centralparknyc.org/support/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Support</a>
                   <ul class="dropdown-menu">
-                    <li><a href="http://www.centralparknyc.org/support/">Support</a></li>
                     <li><a href="http://www.centralparknyc.org/support/benefit-events/">Benefit Events</a></li>
                     <li><a href="http://www.centralparknyc.org/support/index.html#claim">Claim a Piece of the Park</a></li>
                     <li><a href="http://www.centralparknyc.org/support/corporate-giving/">Corporate Giving</a></li>
@@ -324,7 +380,7 @@
                   </ul>
                 </li>  
                 <li class="donate-hp">
-                  <a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join/Renew</a>
+                  <a href="https://secure2.convio.net/cpc/site/SPageServer?pagename=membership&amp;s_src=website&amp;s_subsrc=website_hp_menu">Join or Renew</a>
                 </li>    
                 <li class="search-hp"><i class="fa fa-search desktop-menu" id="submit"></i></li>
               </ul><!-- /.nav navbar-nav -->
@@ -351,11 +407,17 @@
             </form>
           </div>
 
-        </div> <!-- ////////////////////////////// END NAVIGATION CONTAINER ///////////////////////////////////////
+        </div> <!-- ////////////////////////////// END NAVIGATION CONTAINER /////////////////////////////////////// -->
         <div class="click-off-mobile-menu">
           <div class="templateComponent" id="body"></div>
-          <!--- /////////// EVERYTHING BELOW THIS POINT GOES IN WRAPPER ////////////// -->
+
+
+          <!--- /////////// this is where the content lives! ////////////// -->
           <div id="s8" style="display: none;">${url}</div>
+         
+
+
+
           <div class="row "> <!-- open follow us bottom-page -->
             <div class="container">
               <div class="col-xs-12 followus hidden-xs">
@@ -478,58 +540,58 @@
   </div>  
 </body>
 <script>
-(function($){ 
+(function($){
+  
   function toggleNav() {
     if ($('#offcanvas-wrapper').hasClass('show-nav')) {
       // Do things on Nav Close
       $('#offcanvas-wrapper').removeClass('show-nav');
       $('#offcanvas-menu').removeClass('offcanvas-menu-active');
+      $('#contentDiv a').unbind('click');
     } else {
       // Do things on Nav Open
       $('#offcanvas-wrapper').addClass('show-nav');
       $('#offcanvas-menu').addClass('offcanvas-menu-active');
+      $('#contentDiv a').click(function (e){
+        e.preventDefault();
+      });
     }
   }
 
   function searchClick() {
-    $('.search-bar').toggle(300);
+    $('.search-bar').toggle(300).toggleClass('search-bar-active');
   }
+
+  $('.alert-btn').on('click', function(){
+    $('.alert').slideToggle();
+  });
 
   $('.search-hp').on("click", function(){
     searchClick();
+    var searchClickHP = $('.search-bar').hasClass("search-bar-active");
+    if (searchClickHP) {
+      $('.fa-search.desktop-menu').css("color", "#939493");
+    }
+    else {
+      $('.fa-search.desktop-menu').css("color", "white");
+    }
   });
 
   $('.search-mobile').on("click", function(){
     searchClick();
+    var searchClickHP = $('.search-bar').hasClass("search-bar-active");
+    if (searchClickHP) {
+      $('.navbar-mobile .fa-search').css("color", "#939493");
+      $('.icon-li.search-mobile').css("color", "#939493");
+    }
+    else {
+      $('.navbar-mobile .fa-search').css("color", "#636466");
+      $('.icon-li.search-mobile').css("color", "#636466");
+    }
   });
-
-  // $('li.dropdown').on("mouseenter", function(){
-  //   $(this).find("ul.dropdown-menu").slideToggle();
-  //   console.log('hello its me');
-  // });
-
-  //   $('li.dropdown').on("mouseout", function(){
-  //   $(this).find("ul.dropdown-menu").slideToggle();
-  //   console.log('hello its me');
-  // });
-  // $('.navbar-toggle').click(function() {
-  //   // Calling a function in case you want to expand upon this.
-  //   toggleNav();
-  // });
-
-  //Add slideDown animation to dropdown
-  // $('.dropdown').on('show.bs.dropdown', function(e){
-  //   $(this).find('.dropdown-menu').slideDown();
-  // });
-
-  // Add slideUp animation to dropdown
-  // $('.dropdown').on('hide.bs.dropdown', function(e){
-  //   $(this).find('.dropdown-menu').slideUp();
-  // });
 
   $('.dropdown-toggle').on("click", function(){
     var menuClass = "." + $(this).attr('id');
-    console.log(menuClass);
     var faMenuId = ".fa" + "#" + $(this).attr('id');
     $(menuClass).slideToggle(); 
     $(this).find(faMenuId).toggle();
@@ -539,11 +601,6 @@
     toggleNav();
     $(this).toggleClass('active');
   });
-
-  // $('.click-off-mobile-menu').on('click', function(){
-  //   toggleNav();
-  //   $(this).toggleClass('active');
-  // });
 
   $('.click-off-mobile-menu').on("click", function(){
     var mobileMenuOut = $('#offcanvas-wrapper').hasClass('show-nav');
@@ -556,5 +613,186 @@
 
 })(jQuery);
 
+
+// begin scripts for email capture lightbox
+(function($){
+
+  $(function() {
+    // REGISTER MODAL SCRIPTS
+    
+    var cookieValue = readCookie('cpc-2016');
+    var submittedFlag = false;
+    if (cookieValue == 'success' || cookieValue == 'close') {
+    } else {
+      $('#captureModal').modal('show').on('hidden.bs.modal', function () {
+        if (!submittedFlag) {
+          setCookie("cpc-2016", "close", 30);
+        }
+      });
+    }
+
+  //   function stopModal(currentUrl){
+  //     var stopUrl = currentUrl;
+  //     if (document.location.href == stopUrl) {
+  //       // $('#captureModal').hide();
+  //       $('#captureModal').modal('hide');
+  //       // $('.modal-backdrop.fade.in').hide();
+  //       console.log('hide modal again trying everything here');
+  //     }
+  //   } 
+  // stopModal('http://www.centralparknyc.org/test/new-nav-test/home.html');
+    var urlFull = document.location.href;
+
+    function submitRegistration() {
+      if ( $('#lbox_register_form').valid() ) {
+        $('#formSubmit').hide();
+        //$('#memLoader').css('opacity', '0.5').show().center();
+        var myForm = $('#lbox_register_form');
+        var myData = 'method=submitSurvey&survey_id=4520';
+        luminateExtend.api({
+          api: 'survey',
+          requestType: 'POST',
+          data: myData,
+          form: myForm,
+          requiresAuth: 'true',
+          callback: function(data){
+            //alert('success='+data.submitSurveyResponse.success);
+            if (data.submitSurveyResponse.success == 'true') {
+              $('#memLoader').hide();
+              // change login box on successful form submission
+              $('[id^="login_box"]').html('<div id="login_box_w"><div class="welcome">Welcome!</div><div class="welcome_menu"><a class="menu_link" href="http://support.centralparknyc.org/site/UserLogin?logout=1&NEXTURL='+urlFull+'">Logout </a> | <a class="menu_link" href="https://secure2.convio.net/cpc/site/ConsProfileUser">Profile </a> | <a class="menu_link" href="https://secure2.convio.net/cpc/site/ConsInterestsUser/?tabID=interests">Preferences </a></div></div>');
+              $('#note').html('&nbsp;');
+              var thankStyles = {
+                fontSize: '2em',
+                top: '300px'
+              };
+              $('.captureCopy').html('<p>Thank you! Youâ€™re now signed up to receive email from Central Park Conservancy.</p>').css(thankStyles);
+              setCookie("cpc-2016", "success", 365);
+              submittedFlag = true;
+              submitOptimizelyEvent('email_signup_lightbox');
+              ga('send', 'event', 'Email Sign-up', 'Email Sign-up', 'email_signup_lightbox');
+              $('#captureModal').modal('hide');
+
+            } else {
+              $('#formSubmit').show();
+              //$('#memLoader').hide();
+              $('#note').show().html('<p style="color: #F00">'+data.submitSurveyResponse.errors.errorMessage+'<p>');
+            }
+          }
+        });
+      } else {
+        window.scrollBy(0,-50);
+      }
+    }
+
+    $(function() {
+      /* static and some dynamic validation rules for the registration - only handling front-end validation */
+      $('#lbox_register_form').validate({
+        rules: {
+          'cons_email'    : { 'required': true, 'email': true, 'maxlength' : 50 },
+          'cons_zip_code'   : { 'required' : true, 'rangelength' : [5,10] }
+        },
+        messages: {
+          'cons_email'    : { 'required': '* required', 'email': '* please enter a valid email', 'maxlength': '* maximum length 50 characters' },
+          'cons_zip_code'   : { 'required' : '* required',
+                          'rangelength':  '* must be between 5 and 10 characters'  }
+        }
+      });
+      
+      /* STARTUP */
+      /* override the HTML form submission so the user remains on the page while the AJAX processing can occur */
+      $('#formSubmit').click(function() {
+        submitRegistration();
+        return false;
+      });
+      $('#cons_zip_code').keypress(function (e) {
+        //alert('key pressed: '+e.which);
+        if (e.which == 13) {
+          submitRegistration();
+          return false;
+        }
+      })
+      
+      $('#lbox_register_form').attr('action', 'javascript:void(0);');
+      $('.closeModal').click(function() {
+        $('#captureModal').modal('hide');
+      });
+    });
+  });
+})(jQuery);
+// end scripts for email capture lightbox
+
+
+var urlFull = document.location.href;
+
+function submitEmail(thisDivID) {
+  (function($){
+    var myEmail = $('form.'+thisDivID+' input.primaryEmail').val();
+    $('input.primaryEmail').val(myEmail);
+    var myForm = $('form.'+thisDivID+'');
+    var myData = 'method=submitSurvey&survey_id=2621';
+    luminateExtend.api({
+      api: 'survey',
+      requestType: 'POST',
+      data: myData,
+      form: myForm,
+      requiresAuth: 'true',
+      callback: function(data){
+        var successVar = (data.submitSurveyResponse) ? data.submitSurveyResponse.success : '';
+        var errorVar = (data.errorResponse) ? data.errorResponse.code : '';
+        if(successVar == 'true') {
+          var submitOpt = 'email_signup_'+thisDivID;
+          submitOptimizelyEvent(submitOpt);
+          $('.primaryEmail').hide();
+          $('.submitButton').hide();
+          $('.noteBox').show().html('<div id="thanksBox">Thank you! To complete your profile, visit our <a href="http://www.centralparknyc.org/cpc-registration.html?show=all" onClick="ga(\'send\', \'event\', \'Link\', \'Click\', \'Tell Us More - EmailWide\', { \'hitCallback\': function() { document.location = \'http://www.centralparknyc.org/cpc-registration.html?show=all\'; }}); return false;">Registration Page.</a></div>');
+          ga('send', 'event', 'Email Sign-up', 'Email Sign-up', thisDivID);
+        } else {
+          if (errorVar == '1734') {
+            var s8 = $('#s8').text();
+            $('.noteBox').show().html('<p style="color: #F00">This email address already exists; please <a href="http://support.centralparknyc.org/site/UserLogin?NEXTURL='+s8+'">log in</a> to continue.</p>');
+            ga('send', 'event', 'Email Sign-up', 'Duplicate Sign-up', thisDivID);
+          } else {
+            $('.noteBox').show().html('<p style="color: #F00">'+data.submitSurveyResponse.errors.errorMessage+'</p>');
+            ga('send', 'event', 'Email Sign-up', 'Failed Sign-up', thisDivID);
+          }
+        }
+      }
+    });
+  })(jQuery);
+}
+
+(function($){ 
+
+  $('form.emailFollowUs').attr('action', 'javascript:void(0);');
+  $('form.emailFooter').attr('action', 'javascript:void(0);');
+
+  // initialize page
+  $(document).ready(function() {
+    // email submission scripts
+    $('form.emailFollowUs .submitButton').click(function() {
+      submitEmail('emailFollowUs');
+    });
+    $('form.emailFollowUs .primaryEmail').keypress(function (e) {
+      if (e.which == 13) {
+        submitEmail('emailFollowUs');
+        return false;
+      }
+    });
+    $('form.emailFooter .submitButton').click(function() {
+      submitEmail('emailFooter');
+    });
+    $('form.emailFooter .primaryEmail').keypress(function (e) {
+      if (e.which == 13) {
+        submitEmail('emailFooter');
+        return false;
+        
+      }
+    });
+  });
+})(jQuery);
+
+
 </script>
+
 </html>
