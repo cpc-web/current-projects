@@ -1,5 +1,45 @@
 /* honor-mem styles*/
+.fa-circle-o {
+opacity: 1;
+font-size: 16px;
+top: 1px;
+position: relative;
 
+
+
+}
+
+.fa-dot-circle-o {
+opacity: 0;
+font-size: 16px;
+top: 1px;
+position: relative;
+right: 14px;
+
+  -webkit-transition: opacity 50ms ease-out ;
+    -moz-transition: opacity  50ms ease-out;
+    -o-transition: opacity  50ms ease-out;
+    transition: opacity  50ms ease-out;
+
+}
+
+.clickable {
+cursor: pointer;
+}
+
+.alert-modal {
+color: red;
+}
+
+.alert-modal-img {
+font-size: 24px;
+margin: 1em 0;
+color: red;
+}
+
+.close-btn {
+font-size: 32px;
+}
 .modal-content {
 padding: 0 1em;
 }
@@ -14,20 +54,20 @@ text-align: center;
 
 
 .modal-img img {
-width: 555px;
+width: 300px;
 max-width: 100%;  
 margin: 1em 0;
 }
 
 
 .modal.fade .modal-dialog {
-    -webkit-transform: translate(0,0);
-    -ms-transform: translate(0,0);
-    transform: translate(0,0);
-    -webkit-transition: -webkit-transform .3s ease-out;
-    -moz-transition: -moz-transform .3s ease-out;
-    -o-transition: -o-transform .3s ease-out;
-  }
+-webkit-transform: translate(0,0);
+-ms-transform: translate(0,0);
+transform: translate(0,0);
+-webkit-transition: -webkit-transform .3s ease-out;
+-moz-transition: -moz-transform .3s ease-out;
+-o-transition: -o-transform .3s ease-out;
+}
 
 
 
@@ -79,9 +119,16 @@ text-align: center;
 
 .img-selection img {
 margin-bottom: .4em;  
+max-width: 275px;
 }
-.ecard-img-selection input[type="radio"] {
-margin-left: .3em;
+
+#selected-img {
+box-shadow: 0 0 0 3px #636466;
+border-radius: 1px;
+  -webkit-transition: box-shadow 150ms ease-out ;
+    -moz-transition: box-shadow  150ms ease-out;
+    -o-transition: box-shadow  150ms ease-out;
+    transition: box-shadow  150ms ease-out;
 }
 
 #ecardMessage {
@@ -91,7 +138,7 @@ margin-bottom: 1em;
 }
 
 .ecard-img-selection {
-width: 60%;  
+width: 80%;  
 }
 
 #preview-button {

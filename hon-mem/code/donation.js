@@ -2,13 +2,14 @@
 
 // mary edits
 (function($) {
+  // function to determine type of notification and show apporpriate inputs
   function typeOfNoti(notiType){
-    if (notiType === "eCard") {
+    if (notiType == "eCard") {
       $('#ecard_send').val('checked');
       $('.ecard-fields').show();
       $('.mailed-cert-fields').hide();
     }
-    else if (notiType === "Mailed Certificate") {
+    else if (notiType == "Mailed Certificate") {
       $('#ecard_send').val('');
       $('.mailed-cert-fields').show();
       $('.ecard-fields').hide();
@@ -20,29 +21,73 @@
     }
   }
 
-  function eCardID(stationaryID){
-    $('#ecard_id').val(stationaryID);
-    console.log($('#ecard_id').val());
+  // function to give ecard stationary value to to hidden ecard_id input
+  function stationaryId(ecardImgVal, ecardImgClass){
+    $('#ecard_id').removeAttr( "class" ); 
+    $('#ecard_id').val(ecardImgVal);
+    $('#ecard_id').addClass(ecardImgClass);
   }
 
   $(function() {
+
+    // hide ecard fields
     $('.ecard-fields').hide();
     $('.mailed-cert-fields').hide();
 
+    // call function to show appropriate type of notification inputs when type of notification dropdown changes
     $('#type_of_notification_dropdown').change(function () {
       var notiType = $('#type_of_notification_dropdown').val();
       typeOfNoti(notiType);
     });
 
-    $('input[name=stationery_layout_id]:radio').change(function () {
-      // console.log('stationary layout id change');
-      // console.log($(this).val());
-      var myId = $(this).val();
-      eCardID(myId);
+    $('.stationary_layout_img_span').on("click", function(){
+      $('.fa-dot-circle-o').css('opacity', '0');
+      $('.stationary_layout_img_span img').removeAttr( 'id'); 
+      $(this).find( '.fa-dot-circle-o' ).css('opacity', '1');
+      $(this).find( 'img' ).attr("id","selected-img");;
+
+      var imgSpanVal = $(this).find( 'img' ).attr( 'id' );
+      var imgId = $(this).find( 'img' ).attr( 'class' );
+      stationaryId(imgSpanVal, imgId);
+
+      
     });
 
+    $('#preview-button').on("click", function( ){
+      var ecardRecipientsModal = $('#ecardRecipients').val();
+      var ecardSubjectModal = $('#ecardSubject').val();
+      var ecardImgModalClass = $('#ecard_id').attr( 'class' );
+      var ecardImgModalUrl = "img src='https://secure2.convio.net/cpc/images/content/pagebuilder/" + ecardImgModalClass + ".jpg '";
+      var ecardMessageModal = $('#ecardMessage').val();
 
-    $('#preview-button').on("click", function(){
+      if (ecardRecipientsModal == "") {
+        $('.modal-message-to').html('<strong>To:</strong>&nbsp&nbsp<span class="alert-modal">Please Provide the Recipient Email Address</span>');
+      }
+      else {
+        $('.modal-message-to').html('<strong>To:</strong>&nbsp&nbsp' + ecardRecipientsModal);
+      }
+
+      if (ecardSubjectModal == "") {
+        $('.modal-message-subject').html('<strong>Subject:</strong>&nbsp&nbsp<span class="alert-modal">Please Provide a Subject</span>');
+      }
+      else {
+        $('.modal-message-subject').html('<strong>Subject:</strong>&nbsp&nbsp' + ecardSubjectModal);
+      }
+
+      if (ecardImgModalClass == undefined) {
+         $('.modal-img').html('<span class="alert-modal-img">Please Select an Image</span>');
+      }
+      else {
+        $('.modal-img').empty().html("<" + ecardImgModalUrl + "/>");
+      }  
+
+      if (ecardMessageModal == "") {
+        $('.modal-message').html('<span class="alert-modal">Please Write a Message</span>');
+      }
+      else {
+        $('.modal-message').html(ecardMessageModal);
+      }
+
       $('#preview-modal').modal('toggle');
     });
     

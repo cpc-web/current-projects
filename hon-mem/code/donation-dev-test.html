@@ -1,7 +1,6 @@
-<meta content="text/html; charset=utf-8" />
-<link href="https://cloud.webtype.com/css/2ebe6d20-6380-420e-a3c8-7a19f4a641e2.css" rel="stylesheet" type="text/css" />
+
+<!-- <link href="https://cloud.webtype.com/css/2ebe6d20-6380-420e-a3c8-7a19f4a641e2.css" rel="stylesheet" type="text/css" />
 <link href="https://secure2.convio.net/cpc/redesign/css/bootstrap-303-min.css" rel="stylesheet" />
-<!--link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://secure2.convio.net/cpc/js/shadowbox.css" />
 <link rel="stylesheet" type="text/css" href="donation-dev.css" />
@@ -10,10 +9,440 @@
 <script src="donation.js"></script>
 <script src="https://secure2.convio.net/cpc/js/shadowbox.css"></script>
 <script src="https://secure2.convio.net/cpc/js/jquery-tools-min.js"></script>
-<script src="https://secure2.convio.net/cpc/js/jquery.validate.min.js"></script>
-<script src="https://[[S29:SECURE_DOMAIN]][[S29:SECURE_PATH]]SPageServer?pagename=donation_scripts&amp;s_subsrc=[[S334:s_subsrc]]&amp;pgwrap=n[[?xxnullx::x[[S334:type]]x::::&amp;type=[[S334:type]]]][[?xxnullx::x[[S334:levelID]]x::::&amp;levelID=[[S334:levelID]]]]">
+<script src="https://secure2.convio.net/cpc/js/jquery.validate.min.js"></script> -->
+<script src="https://[[S29:SECURE_DOMAIN]][[S29:SECURE_PATH]]SPageServer?pagename=HonMemScripts&amp;s_subsrc=[[S334:s_subsrc]]&amp;pgwrap=n[[?xxnullx::x[[S334:type]]x::::&amp;type=[[S334:type]]]][[?xxnullx::x[[S334:levelID]]x::::&amp;levelID=[[S334:levelID]]]]" >
 </script>
+<style>
+/* honor-mem styles*/
+.fa-circle-o {
+opacity: 1;
+font-size: 16px;
+top: 1px;
+position: relative;
 
+
+
+}
+
+.fa-dot-circle-o {
+opacity: 0;
+font-size: 16px;
+top: 1px;
+position: relative;
+right: 14px;
+
+  -webkit-transition: opacity 50ms ease-out ;
+    -moz-transition: opacity  50ms ease-out;
+    -o-transition: opacity  50ms ease-out;
+    transition: opacity  50ms ease-out;
+
+}
+
+.clickable {
+cursor: pointer;
+}
+
+.alert-modal {
+color: red;
+}
+
+.alert-modal-img {
+font-size: 24px;
+margin: 1em 0;
+color: red;
+}
+
+.close-btn {
+font-size: 32px;
+}
+.modal-content {
+padding: 0 1em;
+}
+
+.honor-mem {
+
+}
+
+.modal-img {
+text-align: center; 
+}
+
+
+.modal-img img {
+width: 300px;
+max-width: 100%;  
+margin: 1em 0;
+}
+
+
+.modal.fade .modal-dialog {
+-webkit-transform: translate(0,0);
+-ms-transform: translate(0,0);
+transform: translate(0,0);
+-webkit-transition: -webkit-transform .3s ease-out;
+-moz-transition: -moz-transform .3s ease-out;
+-o-transition: -o-transform .3s ease-out;
+}
+
+
+
+#ecard_send {
+display:none;
+}
+
+#ecard_id {
+display: none;  
+}
+.honor-mem-header {
+width: 100%;
+background: #69b247;
+color: #fff;
+font-weight: bold;
+padding: 5px;
+font-size: 20px;
+margin: 20px 0 10px;
+}
+
+.honor-mem-fields {
+margin-left: 20px;  
+}
+
+.honor-mem .ecard_send_date select {
+width: 80px;
+}
+
+.honor-mem input[type=text], .honor-mem label, .payment input[type=number], .payment label{
+display: block;
+}
+.honor-mem input[type=text], .honor-mem select, .honor-mem input[type=email], .honor-mem input[type=number]{
+width: 28.5%;
+}
+.honor-mem input[type=text], .honor-mem select, .honor-mem label, input[type=email], input[type=number]{
+margin-bottom: 5px;
+}
+
+.img-break-row {
+margin-bottom: 5px;  
+}
+
+label.img-selection {
+display: inline-block;
+margin-right: 2em;
+margin-bottom: 1em;
+text-align: center;
+}
+
+.img-selection img {
+margin-bottom: .4em;  
+max-width: 275px;
+}
+
+#selected-img {
+box-shadow: 0 0 0 3px #636466;
+border-radius: 1px;
+  -webkit-transition: box-shadow 150ms ease-out ;
+    -moz-transition: box-shadow  150ms ease-out;
+    -o-transition: box-shadow  150ms ease-out;
+    transition: box-shadow  150ms ease-out;
+}
+
+#ecardMessage {
+height: 200px;
+width: 60%;
+margin-bottom: 1em;
+}
+
+.ecard-img-selection {
+width: 80%;  
+}
+
+#preview-button {
+margin-bottom: 1em;  
+}
+
+
+.img-select-text {
+margin-left: .2em;  
+}
+
+body { 
+background: url('../images/content/pagebuilder/Membership-background_v2.jpg') no-repeat center top #fff; 
+margin: 0; 
+padding: 0; 
+background-size:cover;
+}
+#primaryNav{
+display: none !important;
+}
+.top-image{
+min-height: 160px;
+}
+img{
+max-width: 100%;
+}
+.container{
+width: 1170px;
+margin: 0 auto;
+}
+.inner-container{
+background: #E5E4E5;
+color: rgb(99, 100, 102);
+}
+.inner-container{
+width: 875px;
+margin: 0 auto;
+padding-bottom: 30px;
+}
+ul{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+#navTabs{
+width: 100%;
+text-align: center;
+margin-bottom: 30px;
+}
+#navTabs li{
+display: table;
+float: left;
+width: 171px;
+margin-right: 5px;
+background: #6d6e72;
+font-weight: bold;
+text-transform: uppercase;
+vertical-align: top;
+text-align: center;
+font-size: 1.2em;
+}
+#navTabs li:last-of-type{
+margin-right: 0;
+}
+#navTabs a:link, #navTabs a:visited, #navTabs span{
+color: #fff;
+text-decoration: none;
+width: 100%;
+height: 48px;
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+font-size: 16px
+}
+#navTabs span {
+display: none;
+}
+#navTabs .selected span {
+display: table-cell;
+}
+#navTabs .selected a {
+display: none;
+}
+#navTabs .selected{
+background: #69B247;
+position: relative;
+}
+#navTabs .selected:after{
+content: "";
+width: 0;
+height: 0;
+border-color: #69B247 transparent  transparent transparent;
+border-left-width: 85px;
+border-right-width: 85px;
+border-bottom-width: 70px;
+border-top-width: 30px;
+border-style: solid;
+position: absolute;
+top: 100%;
+left: 0%;
+}
+.payment, .billing{
+width: 50%;
+float: left;
+padding-top: 20px;
+position: relative;
+}
+.leftHead{
+background: #69b247;
+color: #fff;
+font-weight: bold;
+padding: 5px;
+font-size: 20px;
+}
+.billing input[type=text], .billing label, .payment input[type=number], .payment label{
+display: block;
+}
+.billing input[type=text], .billing select, .billing input[type=email], .billing input[type=number]{
+width: 100%;
+}
+.billing input[type=text], .billing select, .billing label, input[type=email], input[type=number]{
+margin-bottom: 5px;
+}
+.billing fieldset, .payment fieldset{
+width: 55%;
+margin-left: 20px;
+}
+#cardNumber{
+width: 100%;
+}
+#cardCVV{
+width: 40%;
+}
+.group:after {
+content: "";
+display: table;
+clear: both;
+}
+.cardTypesWrap{
+margin-bottom: 20px;
+}
+.cardTypesWrap li{
+float: left;
+margin-right: 5px;
+}
+label{
+white-space: normal;
+}
+.payment #btnSubmit{
+background: #ffa600;
+color: #fff;
+border: none;
+border-radius: 3px;
+box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+width: 140px;
+height: 40px;
+font-size: 18px;
+display: block;
+margin-top: 20px;
+margin-left: 20px;
+font-weight: bold;
+}
+.level{
+display: inline-block;
+background: #fff;
+color: #000;
+font-weight: bold;
+border-radius: 5px;
+width: 87px;
+padding: 10px;
+text-align: center;
+vertical-align: middle;
+margin: 0 20px 20px 0;
+box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+.level:hover{
+cursor: pointer;
+}
+.level_selected{
+background: #69b247;
+}
+.level input, #level_id_6{
+position: absolute;
+left: -99999999px;
+}
+.levels{
+float: left;
+width: 60%;
+padding-left: 20px;
+position: relative;
+}
+.sideImage{
+float: left;
+width: 38%;
+margin-left: 2%;
+padding-right: 20px;
+text-align: right;
+}
+.sideImage figcaption{
+background: #69b247;
+color: #fff;
+font-style: italic;
+padding: 5px;
+}
+#other_amount{
+border: 1px solid #000;
+background: #E5E4E5;
+width: 50%;
+}
+#memLoader{
+display: none;
+}
+.error{
+color: red;
+}
+.partner{
+display: none;
+}
+label[for="level_id"]{
+position: absolute;
+right: 20px;
+bottom: 20px;
+}
+.security{
+position: absolute;
+right: 20px;
+bottom: 30px;
+text-align: center;
+}
+.security a img{
+width: 85px;
+height: auto;
+}
+
+
+@media screen and (max-width: 760px){
+
+.honor-mem input[type=text], .honor-mem select, .honor-mem input[type=email], .honor-mem input[type=number]{
+width: 75%;
+}
+
+#ecardMessage {
+width: 75%;
+}
+
+.inner-container, .container{
+width: 100%;
+}
+.billing, .payment, .levels{
+width: 100%;
+float: none;
+}
+h1{
+margin: 0;
+padding: 1em 0;
+}
+#navTabs, .sideImage, .navbar-toggle, .navbar-right, #primaryNav, .container .jumbotron{
+display: none;
+}
+.payment #btnSubmit{
+margin: 20px auto;
+}
+.submitSection{
+width: 100%;
+}
+.security{
+bottom: 50px;
+text-align: right;
+}
+.mobile{
+display: none;
+}
+.intro p{
+padding-right: 20px;
+}
+.billing fieldset{
+width: 75%;
+}
+.level{
+margin: 0 10px 10px 0;
+}
+.security{
+bottom: 80px;
+}
+.top-image{
+min-height: 55px;
+}
+}
+</style>
 
 
 
@@ -110,7 +539,6 @@
       <div class="honor-mem-header">
         Honor or Memorial Gift
       </div>
-      
       <!-- begin honor memorial fields -->
       <div class="honor-mem-fields">
         <p>* Required Fields</p>
@@ -1549,3 +1977,5 @@
 <div id="memLoader">
   <img src="../images/content/pagebuilder/loadingAnimation.gif" alt="" />
 </div>
+
+
